@@ -1,1 +1,5 @@
-*/driver
+*.out
+*.exe
+*.o
+driver
+.vscode
