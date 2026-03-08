@@ -12,6 +12,7 @@ Given an undirected graph with `n` nodes and `edges`, determine if a path exists
 Input:
 n = 5
 edges = [[0, 2], [1, 3], [2, 4]]
+u = 2, v = 0
 Output: True
 ```
 
@@ -19,8 +20,9 @@ Output: True
 ```
 Input:
 n = 4
-edges = [[0, 1], [1, 2], [1, 3], [0, 3]]
-Output: True
+edges = [[0, 1], [2, 3]]
+u = 0, v = 3
+Output: False
 ```
 
 ## Constraints
