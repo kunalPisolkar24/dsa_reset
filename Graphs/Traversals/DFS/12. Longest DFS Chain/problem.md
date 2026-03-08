@@ -12,17 +12,17 @@ Return the maximum depth reached during the DFS starting from node `0`.
 **Example 1:**
 ```
 Input:
-n = 13
-edges = [[5, 10], [3, 9], [5, 6], [0, 11]]
-Output: 1
+n = 5
+edges = [[0, 1], [0, 2], [1, 2], [0, 3]]
+Output: 2
 ```
 
 **Example 2:**
 ```
 Input:
-n = 17
-edges = [[4, 9], [3, 7], [14, 16], [0, 2], [11, 14], [2, 8], [2, 14], [13, 14], [1, 15], [6, 11], [8, 11], [9, 16], [0, 4], [1, 5], [15, 16], [10, 13], [1, 4], [11, 12], [0, 6], [13, 15]]
-Output: 10
+n = 5
+edges = [[0, 1], [0, 4], [3, 4], [2, 3], [1, 3]]
+Output: 3
 ```
 
 ## Constraints

@@ -10,17 +10,17 @@ Given an undirected graph with `n` nodes and `edges`, determine if a path exists
 **Example 1:**
 ```
 Input:
-n = 16
-edges = [[5, 13], [0, 12], [4, 7], [0, 2], [11, 15], [3, 6], [2, 6], [4, 14], [7, 12], [14, 15], [3, 5], [12, 14]]
-Output: False
+n = 5
+edges = [[0, 2], [1, 3], [2, 4]]
+Output: True
 ```
 
 **Example 2:**
 ```
 Input:
-n = 10
-edges = [[0, 7], [1, 4]]
-Output: False
+n = 4
+edges = [[0, 1], [1, 2], [1, 3], [0, 3]]
+Output: True
 ```
 
 ## Constraints

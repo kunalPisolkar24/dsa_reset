@@ -12,17 +12,17 @@ Compute the depth of each node in the DFS tree starting from node `0` (which has
 **Example 1:**
 ```
 Input:
-n = 17
-edges = [[1, 11], [5, 7], [8, 9], [1, 13], [3, 12], [4, 11], [3, 15]]
-Output: [0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0]
+n = 7
+edges = [[1, 2], [3, 4], [4, 6], [1, 4], [0, 5], [3, 6], [1, 3]]
+Output: [0, 0, 1, 1, 2, 1, 3]
 ```
 
 **Example 2:**
 ```
 Input:
-n = 7
-edges = [[2, 4], [1, 2], [5, 6], [0, 5]]
-Output: [0, 0, 1, 0, 2, 1, 2]
+n = 4
+edges = [[0, 1], [1, 2], [0, 3], [2, 3], [0, 2], [1, 3]]
+Output: [0, 1, 2, 3]
 ```
 
 ## Constraints

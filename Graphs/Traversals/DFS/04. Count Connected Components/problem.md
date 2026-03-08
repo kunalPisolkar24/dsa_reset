@@ -10,17 +10,17 @@ Given `n` nodes and `edges`, count how many distinct connected components exist.
 **Example 1:**
 ```
 Input:
-n = 2
-edges = []
-Output: 2
+n = 5
+edges = [[2, 4], [1, 2], [3, 4], [0, 3], [1, 4], [2, 3], [1, 3]]
+Output: 1
 ```
 
 **Example 2:**
 ```
 Input:
-n = 5
-edges = []
-Output: 5
+n = 4
+edges = [[0, 1], [1, 2], [1, 3], [0, 3]]
+Output: 1
 ```
 
 ## Constraints

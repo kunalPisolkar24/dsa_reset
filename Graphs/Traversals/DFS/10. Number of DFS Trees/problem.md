@@ -10,17 +10,17 @@ If you run DFS on all nodes (iterating `0..n-1`, starting DFS if not visited), h
 **Example 1:**
 ```
 Input:
-n = 2
-edges = []
-Output: 2
+n = 7
+edges = [[2, 4], [1, 2], [0, 3], [0, 6], [2, 3], [2, 6], [5, 6], [3, 6], [3, 5]]
+Output: 1
 ```
 
 **Example 2:**
 ```
 Input:
-n = 20
-edges = [[10, 11], [0, 11], [6, 11]]
-Output: 17
+n = 7
+edges = [[0, 1], [0, 4], [4, 6], [0, 3], [2, 6]]
+Output: 2
 ```
 
 ## Constraints
