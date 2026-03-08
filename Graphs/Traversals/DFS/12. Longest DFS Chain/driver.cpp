@@ -1,8 +1,24 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <string>
 #include "Solution.cpp"
 
 using namespace std;
+
+struct Color {
+    static const string RED;
+    static const string GREEN;
+    static const string YELLOW;
+    static const string RESET;
+    static const string BOLD;
+};
+
+const string Color::RED = "\033[31m";
+const string Color::GREEN = "\033[32m";
+const string Color::YELLOW = "\033[33m";
+const string Color::RESET = "\033[0m";
+const string Color::BOLD = "\033[1m";
 
 struct TestCase {
     int n;
@@ -10,40 +26,87 @@ struct TestCase {
     int expected;
 };
 
-int main() {
-    Solution sol;
-    vector<TestCase> cases = {
-    { 13, {}, 0 },
-    { 20, {{4, 11}}, 0 },
-    { 23, {{6, 12}, {4, 6}, {14, 19}, {8, 18}, {17, 18}, {19, 21}, {2, 11}, {1, 9}, {10, 15}, {2, 14}, {1, 18}, {7, 16}, {6, 17}, {5, 12}, {4, 20}, {0, 1}, {2, 7}, {0, 16}, {6, 10}, {6, 19}, {5, 8}, {9, 12}, {19, 22}, {13, 15}}, 13 },
-    { 11, {{7, 10}, {0, 3}, {3, 10}, {7, 9}, {6, 7}, {1, 7}, {5, 10}, {4, 8}, {0, 5}, {0, 8}, {2, 5}}, 4 },
-    { 5, {{2, 3}, {2, 4}}, 0 },
-    { 22, {{4, 10}, {1, 21}, {18, 19}, {0, 15}, {6, 9}}, 1 },
-    { 12, {{5, 11}, {1, 4}}, 0 },
-    { 17, {{1, 12}, {1, 5}, {15, 16}, {10, 16}, {11, 15}}, 0 },
-    { 2, {}, 0 },
-    { 18, {{10, 11}, {3, 14}, {13, 16}, {8, 16}, {3, 10}, {2, 3}, {2, 6}}, 0 },
-    { 5, {{0, 2}, {1, 4}}, 1 },
-    { 13, {{1, 6}, {1, 8}, {1, 9}, {1, 10}}, 0 },
-    { 9, {{3, 4}, {5, 8}, {6, 7}, {4, 5}, {0, 5}, {4, 8}, {1, 6}, {3, 5}}, 4 },
-    { 2, {}, 0 },
-    { 8, {{0, 1}, {2, 7}, {0, 3}, {5, 7}, {3, 6}, {4, 7}}, 2 }
+class TestRunner {
+public:
+    void run() {
+        vector<TestCase> cases = {
+            { 13, {{5, 10}, {3, 9}, {5, 6}, {0, 11}}, 1 },
+            { 17, {{4, 9}, {3, 7}, {14, 16}, {0, 2}, {11, 14}, {2, 8}, {2, 14}, {13, 14}, {1, 15}, {6, 11}, {8, 11}, {9, 16}, {0, 4}, {1, 5}, {15, 16}, {10, 13}, {1, 4}, {11, 12}, {0, 6}, {13, 15}}, 10 },
+            { 20, {{7, 17}, {11, 14}, {0, 11}, {7, 10}, {3, 6}, {14, 18}, {4, 11}, {8, 11}, {9, 16}, {13, 16}, {7, 9}, {12, 14}, {3, 11}, {0, 9}, {10, 13}, {11, 12}, {10, 16}, {10, 19}, {1, 10}}, 5 },
+            { 15, {{1, 12}, {1, 2}, {10, 11}, {6, 13}, {5, 10}, {6, 10}, {2, 12}, {4, 14}, {0, 8}, {11, 14}, {1, 9}}, 1 },
+            { 11, {{0, 2}}, 1 },
+            { 4, {{0, 2}, {1, 2}}, 2 },
+            { 3, {}, 0 },
+            { 5, {{2, 4}, {1, 3}, {0, 2}}, 2 },
+            { 23, {{2, 14}, {10, 21}, {13, 17}, {4, 9}, {10, 17}, {3, 20}, {18, 19}, {7, 9}, {1, 13}, {9, 14}, {12, 21}, {6, 19}, {3, 15}, {4, 20}}, 0 },
+            { 16, {{5, 15}, {5, 11}, {4, 9}, {3, 7}, {0, 3}, {1, 14}, {14, 15}, {1, 4}, {7, 9}, {6, 10}, {1, 10}, {4, 11}, {1, 3}, {3, 5}}, 7 },
+            { 12, {{1, 5}, {2, 10}, {7, 9}, {0, 5}, {1, 10}, {5, 9}, {2, 8}}, 5 },
+            { 5, {{0, 4}, {3, 4}}, 2 },
+            { 23, {{0, 10}, {0, 16}, {1, 11}, {6, 8}, {19, 20}, {18, 19}, {9, 15}, {7, 22}, {8, 9}, {19, 22}, {9, 14}, {0, 5}, {4, 11}, {10, 18}, {16, 17}}, 5 },
+            { 21, {{11, 20}, {1, 7}, {9, 18}}, 0 },
+            { 14, {{4, 10}, {3, 8}, {5, 8}, {7, 10}, {0, 3}, {8, 10}, {4, 6}, {1, 4}, {7, 8}, {2, 11}, {5, 12}, {0, 11}}, 6 }
+        };
+
+        
+        Solution sol;
+        int passedCount = 0;
+        int totalCount = cases.size();
+        
+        cout << Color::BOLD << "Running " << totalCount << " Tests..." << Color::RESET << "\n\n";
+        
+        for (int i = 0; i < totalCount; i++) {
+            TestCase tc = cases[i];
+            
+            stringstream buffer;
+            streambuf* oldCoutBuf = cout.rdbuf(buffer.rdbuf());
+            
+            int result = sol.longestDFSChain(tc.n, tc.edges);
+            
+            cout.rdbuf(oldCoutBuf);
+            string logs = buffer.str();
+            
+            bool passed = (result == tc.expected);
+            
+            if (passed) {
+                cout << Color::GREEN << "✓ Test " << i + 1 << " Passed" << Color::RESET << "\n";
+                passedCount++;
+            } else {
+                cout << Color::RED << "✗ Test " << i + 1 << " Failed" << Color::RESET << "\n";
+                cout << "     " << Color::RED << "Expected: " << tc.expected << Color::RESET << "\n";\
+                cout << "     " << Color::RED << "Got:      " << result << Color::RESET << "\n";
+            }
+            
+            if (!logs.empty()) {
+                cout << Color::YELLOW << "   Logs:" << Color::RESET << "\n";
+                stringstream logStream(logs);
+                string line;
+                while (getline(logStream, line)) {
+                    cout << "     " << line << "\n";
+                }
+            }
+            
+            cout << "\n";
+        }
+        
+        printSummary(passedCount, totalCount);
+    }
+
+private:
+    void printSummary(int passedCount, int totalCount) {
+        cout << Color::BOLD << "=======================================" << Color::RESET << "\n";
+        if (passedCount == totalCount) {
+            cout << Color::GREEN << Color::BOLD << "  ALL TESTS PASSED! (" << passedCount << "/" << totalCount << ")" << Color::RESET << "\n";
+            cout << Color::GREEN << "  (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧" << Color::RESET << "\n";
+        } else {
+            cout << Color::RED << Color::BOLD << "  TESTS FAILED (" << passedCount << "/" << totalCount << " passed)" << Color::RESET << "\n";
+            cout << Color::RED << "  (╯°□°）╯︵ ┻━┻" << Color::RESET << "\n";
+        }
+        cout << Color::BOLD << "=======================================" << Color::RESET << "\n";
+    }
 };
 
-    
-    int passed = 0;
-    for (int i = 0; i < cases.size(); i++) {
-        TestCase tc = cases[i];
-        int result = sol.longestDFSChain(tc.n, tc.edges);
-        if (result == tc.expected) {
-            cout << "Test " << i + 1 << ": PASSED\n";
-            passed++;
-        } else {
-            cout << "Test " << i + 1 << ": FAILED\n";
-            cout << "Expected: " << tc.expected << " | Got: " << result << "\n";
-        }
-    }
-    
-    cout << "\nResult: " << passed << " / " << cases.size() << " tests passed.\n";
+int main() {
+    TestRunner runner;
+    runner.run();
     return 0;
 }

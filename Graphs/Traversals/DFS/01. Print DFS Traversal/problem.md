@@ -16,16 +16,16 @@ Return the order in which nodes are visited.
 **Example 1:**
 ```
 Input:
-n = 8
-edges = [[3, 4], [3, 7], [2, 3], [6, 7], [4, 5], [1, 7], [0, 2], [1, 6], [1, 3]]
-Output: [0, 2, 3, 1, 6, 7, 4, 5]
+n = 7
+edges = []
+Output: [0, 1, 2, 3, 4, 5, 6]
 ```
 
 **Example 2:**
 ```
 Input:
 n = 3
-edges = []
+edges = [[0, 1]]
 Output: [0, 1, 2]
 ```
 

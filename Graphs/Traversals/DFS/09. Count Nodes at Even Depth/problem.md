@@ -10,17 +10,17 @@ Using the same logic as Problem 8, count how many nodes end up at an **even dept
 **Example 1:**
 ```
 Input:
-n = 9
-edges = [[0, 4], [3, 4], [1, 5], [6, 8], [1, 7], [0, 2], [7, 8], [3, 6], [0, 8], [3, 5], [2, 8]]
-Output: 4
+n = 13
+edges = [[4, 10], [0, 10], [6, 11]]
+Output: 11
 ```
 
 **Example 2:**
 ```
 Input:
-n = 2
-edges = []
-Output: 2
+n = 7
+edges = [[2, 4], [0, 4], [1, 5], [0, 2]]
+Output: 5
 ```
 
 ## Constraints

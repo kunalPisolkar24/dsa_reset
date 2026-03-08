@@ -10,17 +10,17 @@ Given an undirected graph with `n` nodes and `edges`, and a starting node `start
 **Example 1:**
 ```
 Input:
-n = 14
-edges = [[7, 12], [6, 10], [0, 11], [6, 11]]
+n = 6
+edges = [[0, 1], [1, 2], [1, 4]]
 Output: 1
 ```
 
 **Example 2:**
 ```
 Input:
-n = 9
-edges = [[4, 5], [3, 5], [7, 8], [3, 6]]
-Output: 4
+n = 7
+edges = [[1, 5], [4, 6], [0, 6], [2, 3], [5, 6], [0, 5]]
+Output: 5
 ```
 
 ## Constraints

@@ -10,17 +10,17 @@ Return the size of the largest connected component in the given graph.
 **Example 1:**
 ```
 Input:
-n = 18
-edges = [[10, 15], [5, 15], [1, 7], [10, 12]]
+n = 25
+edges = [[5, 21], [0, 20], [1, 21], [3, 17], [6, 8], [2, 19], [4, 5], [2, 22], [3, 11]]
 Output: 4
 ```
 
 **Example 2:**
 ```
 Input:
-n = 3
-edges = [[0, 2]]
-Output: 2
+n = 12
+edges = [[2, 4], [5, 11], [0, 4], [0, 10], [5, 8], [7, 10], [2, 10], [1, 8], [3, 7], [1, 4], [0, 6], [5, 10], [0, 2], [4, 11]]
+Output: 11
 ```
 
 ## Constraints

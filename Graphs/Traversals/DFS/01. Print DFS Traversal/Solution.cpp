@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
 public:
     vector<int> dfsTraversal(int n, vector<vector<int>>& edges) {
-        // Write your code here
-        return {};
+        cout << "Hello" << endl;
+        return {1};
     }
 };
