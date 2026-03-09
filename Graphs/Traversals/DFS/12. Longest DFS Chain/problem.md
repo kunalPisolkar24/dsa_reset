@@ -1,6 +1,6 @@
 # 12. Longest DFS Chain
 
-**Difficulty:** Hard
+**Difficulty:** Medium
 
 ## Problem Statement
 Return the maximum depth reached during the DFS starting from node `0`.
