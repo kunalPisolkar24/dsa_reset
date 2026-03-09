@@ -5,6 +5,8 @@
 ## Problem Statement
 Return an array `parent` where `parent[i]` is the node that discovered `i` during BFS from `0`. The parent of `0` is `-1`. Unreachable nodes should also have a parent of `-1`.
 
+Start from node `0`, visit neighbors in ascending order.
+
 ### Example Testcases
 
 **Example 1:**
