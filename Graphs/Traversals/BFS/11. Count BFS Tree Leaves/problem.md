@@ -5,6 +5,8 @@
 ## Problem Statement
 Count the number of leaves in the BFS tree rooted at `0`. A node is a leaf if it discovers no other unvisited nodes during BFS traversal.
 
+Start from node `0`, visit neighbors in ascending.
+
 ### Example Testcases
 
 **Example 1:**
