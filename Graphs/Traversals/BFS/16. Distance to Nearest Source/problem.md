@@ -1,6 +1,6 @@
 # 16. Distance to Nearest Source
 
-**Difficulty:** Hard
+**Difficulty:** Medium
 
 ## Problem Statement
 Given a set of source nodes, return the shortest distance from every node to its **nearest source**. Unreachable nodes get `-1`.
