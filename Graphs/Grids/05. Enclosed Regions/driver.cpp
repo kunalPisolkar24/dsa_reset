@@ -346,7 +346,10 @@ public:
                 passedCount++;
             } else {
                 cout << Color::RED << "✗ Test " << i + 1 << " Failed" << Color::RESET << "\n";
-                cout << "     " << Color::RED << "Expected: [Matrix]\n"; cout << "     " << Color::RED << "Got:      [Matrix]" << Color::RESET << "\n";
+                cout << "     " << Color::RED << "Expected:" << Color::RESET << "\n";
+                printGrid(tc.expected);
+                cout << "     " << Color::RED << "Got:" << Color::RESET << "\n";
+                printGrid(result);
             }
             
             if (!logs.empty()) {
@@ -365,6 +368,18 @@ public:
     }
 
 private:
+    template<typename T>
+    void printGrid(const vector<vector<T>>& grid) {
+        for (const auto& row : grid) {
+            cout << "       { ";
+            for (int k = 0; k < (int)row.size(); k++) {
+                cout << row[k];
+                if (k + 1 < (int)row.size()) cout << ", ";
+            }
+            cout << " }\n";
+        }
+    }
+
     void printSummary(int passedCount, int totalCount) {
         cout << Color::BOLD << "=======================================" << Color::RESET << "\n";
         if (passedCount == totalCount) {
