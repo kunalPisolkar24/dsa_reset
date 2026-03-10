@@ -1,6 +1,6 @@
 # 17. Closest Special Node
 
-**Difficulty:** Hard
+**Difficulty:** Medium
 
 ## Problem Statement
 Some nodes are special. For each node, compute the distance to the nearest special node. Unreachable nodes get `-1`.
