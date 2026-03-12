@@ -1,38 +1,72 @@
-# Boundary Distance Spread
+# 4. Boundary Distance Spread
 
-### Problem Statement
+**Difficulty:** Medium
 
-You are given a grid containing `0` and `1`.
+## Problem Statement
+You are given a `m x n` grid containing only `0` and `1`.
 
-Treat **all boundary cells containing 1 as sources**.
+Treat every **boundary cell** with value `1` as a source. Perform a multi-source BFS using **4-directional** movement and compute, for every cell, the minimum distance to any boundary `1`.
 
-Spread outward (like BFS). Each step increases distance by `1`.
+Return a grid of distances where:
+- A boundary `1` has distance `0`.
+- Each step to a 4-directionally adjacent cell increases distance by `1`.
+- If there is **no boundary `1`**, every cell should be `-1`.
 
-Return a grid where every cell contains the **minimum distance from the nearest boundary 1**.
+### Example Testcases
 
-Cells unreachable from boundary 1 should be `-1`.
-
----
-
-### Example
-
-Input
-
+**Example 1:**
 ```
+Input:
 grid = {
- {1,0,0},
- {0,0,0},
- {0,1,0}
+  {1, 0, 0},
+  {0, 0, 0},
+  {0, 1, 0}
 }
-```
 
-Output
-
-```
+Output:
 {
- {0,1,2},
- {1,1,2},
- {1,0,1}
+  {0, 1, 2},
+  {1, 1, 2},
+  {1, 0, 1}
 }
 ```
 
+**Example 2:**
+```
+Input:
+grid = {
+  {0, 0, 0, 0},
+  {0, 0, 0, 0},
+  {0, 0, 0, 0}
+}
+
+Output:
+{
+  {-1, -1, -1, -1},
+  {-1, -1, -1, -1},
+  {-1, -1, -1, -1}
+}
+```
+
+**Example 3:**
+```
+Input:
+grid = {
+  {1, 0, 1, 0},
+  {0, 0, 0, 0},
+  {0, 0, 0, 0},
+  {0, 1, 0, 0}
+}
+
+Output:
+{
+  {0, 1, 0, 1},
+  {1, 2, 1, 2},
+  {2, 1, 2, 3},
+  {1, 0, 1, 2}
+}
+```
+
+## Constraints
+- `1 <= m, n <= 200`
+- `grid[i][j]` is either `0` or `1`

@@ -1,35 +1,57 @@
-# Count Safe Cells
+# 3. Count Safe Cells
 
-### Problem Statement
+**Difficulty:** Easy
 
-You are given a grid containing `0` and `1`.
+## Problem Statement
+You are given a `m x n` grid containing only `0` and `1`.
 
-A cell is **safe** if it is a `1` and **NOT connected to any boundary `1`**.
+A cell is **safe** if it is `1` and **not connected to any boundary `1`** using **4-directional** adjacency.
 
-Return the **count of safe cells**.
+Return the **number of safe cells**.
 
----
+### Example Testcases
 
-### Example
-
-Input
-
+**Example 1:**
 ```
+Input:
 grid = {
- {1,1,1,1},
- {1,0,0,1},
- {1,0,1,1},
- {1,1,1,1}
+  {1, 1, 1, 1},
+  {1, 0, 0, 1},
+  {1, 0, 1, 1},
+  {1, 1, 1, 1}
 }
-```
 
-Output
-
-```
+Output:
 0
 ```
 
-Explanation
+**Example 2:**
+```
+Input:
+grid = {
+  {0, 0, 0, 0},
+  {0, 1, 1, 0},
+  {0, 1, 1, 0},
+  {0, 0, 0, 0}
+}
 
-All 1s are connected to the boundary.
+Output:
+4
+```
 
+**Example 3:**
+```
+Input:
+grid = {
+  {1, 1, 1},
+  {1, 1, 1},
+  {1, 1, 1}
+}
+
+Output:
+0
+```
+
+## Constraints
+- `1 <= m, n <= 200`
+- `grid[i][j]` is either `0` or `1`

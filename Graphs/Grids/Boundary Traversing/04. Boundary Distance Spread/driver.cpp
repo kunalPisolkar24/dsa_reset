@@ -351,7 +351,9 @@ public:
                 passedCount++;
             } else {
                 cout << Color::RED << "✗ Test " << i + 1 << " Failed" << Color::RESET << "\n";
+                cout << "     " << Color::RED << "Expected:" << Color::RESET << "\n";
                 printGrid(tc.expected);
+                cout << "     " << Color::RED << "Got:" << Color::RESET << "\n";
                 printGrid(result);
             }
             
@@ -373,6 +375,10 @@ public:
 private:
     template<typename T>
     void printGrid(const vector<vector<T>>& grid) {
+        if (grid.empty()) {
+            cout << "       { }\n";
+            return;
+        }
         for (const auto& row : grid) {
             cout << "       { ";
             for (int k = 0; k < (int)row.size(); k++) {
