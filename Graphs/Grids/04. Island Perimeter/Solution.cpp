@@ -7,24 +7,45 @@ public:
   int islandPerimeter(vector<vector<int>> &grid) {
     int count = 0;
     int n = grid.size(), m = grid[0].size();
-    function<int(int, int)> dfs = [&](int i, int j) -> int {
-      int count = 0;
-      if (i < 0 or j < 0 or i >= n or j >= m or grid[i][j] == 0)
-        return 1;
-      if (grid[i][j] == 2)
-        return 0;
-      grid[i][j] = 2;
-      count += dfs(i + 1, j);
-      count += dfs(i - 1, j);
-      count += dfs(i, j + 1);
-      count += dfs(i, j - 1);
-      return count;
+
+    vector<int> dx = {0, 1, 0, -1}, dy = {1, 0, -1, 0};
+
+    auto bfs = [&](int row, int col) -> int {
+      int totalPerimter = 0;
+      queue<pair<int, int>> q;
+      q.push({row, col});
+      grid[row][col] = 2;
+
+      while (!q.empty()) {
+        auto [x, y] = q.front();
+        q.pop();
+        int currPerimeter = 4;
+
+        for (int i = 0; i < 4; i++) {
+          int nx = x + dx[i];
+          int ny = y + dy[i];
+
+          bool bounds = nx >= 0 and ny >= 0 and nx < n and ny < m;
+          if (bounds) {
+            if (grid[nx][ny] == 2)
+              currPerimeter--;
+            if (grid[nx][ny] == 1) {
+              currPerimeter--;
+              grid[nx][ny] = 2;
+              q.push({nx, ny});
+            }
+          }
+        }
+
+        totalPerimter += currPerimeter;
+      }
+      return totalPerimter;
     };
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++) {
         if (grid[i][j] == 1) {
-          count += dfs(i, j);
+          count += bfs(i, j);
         }
       }
     }
