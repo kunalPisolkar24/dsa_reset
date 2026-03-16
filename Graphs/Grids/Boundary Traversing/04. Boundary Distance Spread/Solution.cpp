@@ -3,8 +3,41 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> boundaryDistanceSpread(vector<vector<int>>& grid) {
-        // Your code here
-        return grid;
+  vector<vector<int>> boundaryDistanceSpread(vector<vector<int>> &grid) {
+    int n = grid.size(), m = grid[0].size();
+
+    vector<vector<int>> dist(n, vector<int>(m, -1));
+    queue<pair<int, int>> q;
+
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        bool bounds = i == 0 or j == 0 or i == n - 1 or j == m - 1;
+        if (bounds) {
+          if (grid[i][j] == 1) {
+            q.push({i, j});
+            dist[i][j] = 0;
+          }
+        }
+      }
     }
+
+    vector<int> dx = {0, 1, 0, -1}, dy = {1, 0, -1, 0};
+    while (!q.empty()) {
+      auto [x, y] = q.front();
+      q.pop();
+
+      for (int i = 0; i < 4; i++) {
+        int nx = x + dx[i];
+        int ny = y + dy[i];
+        bool bounds = nx >= 0 and ny >= 0 and nx < n and ny < m;
+        if (bounds) {
+          if (dist[nx][ny] == -1) {
+            dist[nx][ny] = 1 + dist[x][y];
+            q.push({nx, ny});
+          }
+        }
+      }
+    }
+    return dist;
+  }
 };
