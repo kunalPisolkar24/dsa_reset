@@ -24,6 +24,25 @@ Painter 2 paints boards[1] (10 units).
 Total time = max(1, 10) = 10.
 ```
 
+**Example 2:**
+```
+Input: boards = [10, 20, 30, 40], k = 2
+Output: 60
+Explanation: 
+The optimal partition is [10, 20, 30] and [40].
+Maximum units painted by a painter = 60.
+```
+
+**Example 3:**
+```
+Input: boards = [5, 5, 5, 5], k = 2
+Output: 10
+Explanation: 
+Painter 1 paints [5, 5], Painter 2 paints [5, 5].
+Maximum units painted = 10.
+```
+
+
 ## Constraints
 
 - `1 <= boards.length <= 10^5`

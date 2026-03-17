@@ -27,6 +27,28 @@ Allocation possibilities:
 The minimum of these maximums is 60.
 ```
 
+**Example 2:**
+```
+Input: pages = [12, 34, 67, 90], m = 2
+Output: 113
+Explanation: 
+Possible allocations:
+- [12], [34, 67, 90] -> Max = 191
+- [12, 34], [67, 90] -> Max = 157
+- [12, 34, 67], [90] -> Max = 113
+Min-max value is 113.
+```
+
+**Example 3:**
+```
+Input: pages = [25, 46, 28, 49, 24], m = 4
+Output: 71
+Explanation: 
+The optimal allocation is [25, 46], [28], [49], [24].
+The maximum pages assigned to a student is 71.
+```
+
+
 ## Constraints
 
 - `1 <= pages.length <= 10^5`
