@@ -4,9 +4,20 @@ using namespace std;
 
 class Solution {
 public:
-    int mySqrt(int x) {
-        // TODO: Return the largest integer y such that y*y <= x using binary search.
-        // x is between 0 and 2^31 - 1.
-        return 0;
+  int mySqrt(int x) {
+    int low = 0, high = x;
+    int ans = high;
+    while (low <= high) {
+      int mid = low + (high - low) / 2;
+      long long val = 1LL * mid * mid;
+
+      if (val <= x) {
+        ans = mid;
+        low = mid + 1;
+      }
+      else
+        high = mid - 1;
     }
+    return ans;
+  }
 };
