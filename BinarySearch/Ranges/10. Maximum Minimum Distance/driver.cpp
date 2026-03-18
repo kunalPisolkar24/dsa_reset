@@ -72,6 +72,15 @@ public:
                 cout << "     " << Color::RED << "Expected: " << tc.expected << Color::RESET << "\n";
                 cout << "     " << Color::RED << "Got: " << result << Color::RESET << "\n";
             }
+            
+            if (!logs.empty()) {
+                cout << Color::YELLOW << "   Logs:" << Color::RESET << "\n";
+                stringstream logStream(logs);
+                string line;
+                while (getline(logStream, line)) {
+                    cout << "     " << line << "\n";
+                }
+            }
         }
         
         cout << "\n";
