@@ -22,9 +22,28 @@ sum(ceil(thresholds[i] / x)) <= limit
 Input: low = 1, high = 100, thresholds = [10, 20, 30], limit = 6
 Output: 10
 Explanation:
-For x=10, sum = 1+2+3 = 6 (<= 6). True.
-For x=9, sum = 2+3+4 = 9 (> 6). False.
-The first failing point (first true) is 10.
+For x = 10: ceil(10/10) + ceil(20/10) + ceil(30/10) = 1 + 2 + 3 = 6 (<= 6). True.
+For x = 9: ceil(10/9) + ceil(20/9) + ceil(30/9) = 2 + 3 + 4 = 9 (> 6). False.
+The first integer x such that f(x) is true is 10.
+```
+
+**Example 2:**
+```
+Input: low = 1, high = 100, thresholds = [5, 5, 5], limit = 10
+Output: 2
+Explanation:
+For x = 2: ceil(5/2) + ceil(5/2) + ceil(5/2) = 3 + 3 + 3 = 9 (<= 10). True.
+For x = 1: ceil(5/1) + ceil(5/1) + ceil(5/1) = 5 + 5 + 5 = 15 (> 10). False.
+Output: 2.
+```
+
+**Example 3:**
+```
+Input: low = 1, high = 5, thresholds = [10], limit = 1
+Output: -1
+Explanation:
+Even at the maximum possible x = 5, ceil(10/5) = 2, which is greater than the limit 1.
+No value in the range [1, 5] makes f(x) true.
 ```
 
 ## Constraints
