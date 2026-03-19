@@ -39,7 +39,7 @@ public:
             { "aab", 2 },
             { "cdd", 2 },
             { "qrsvbspk", 5 },
-            { "asjdfoiasjdfoia", 5 },
+            { "asjdfoiasjdfoia", 7 },
             { "Testing 123!", 12 }
         };
 
