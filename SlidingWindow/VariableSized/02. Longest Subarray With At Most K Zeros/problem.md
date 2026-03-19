@@ -13,21 +13,18 @@ Given a binary array `nums` (containing only 0s and 1s) and an integer `k`, retu
 Input: nums = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], k = 2
 Output: 6
 Explanation: 
-The subarray [0, 0, 1, 1, 1, 1] is not valid because it has 2 zeros, wait it is valid.
-[0, 0, 1, 1, 1, 1] -> 2 zeros, length 6.
-[1, 1, 1, 1, 0] -> 1 zero, length 5.
-Wait, let's check:
-[1, 1, 1, 0, 0] -> 2 zeros, length 5.
-[0, 0, 1, 1, 1, 1] -> 2 zeros, length 6.
+Possible subarrays with at most 2 zeros:
+- [0, 0, 1, 1, 1, 1] (Indices 4 to 9) contains 2 zeros and has length 6.
+- [1, 1, 1, 1, 0] (Indices 6 to 10) contains 1 zero and has length 5.
 Maximum length is 6.
 ```
 
 **Example 2:**
 ```
-Input: nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], k = 3
+Input: nums = [0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], k = 3
 Output: 10
-Explanation: [1,1,1,0,1,1,0,0,0,1,1,1,1] contains too many zeros.
-Actually this is the same as LeetCode "Max Consecutive Ones III".
+Explanation: 
+The subarray [1, 1, 0, 0, 1, 1, 1, 0, 1, 1] (Indices 2 to 11) contains exactly 3 zeros and has length 10.
 ```
 
 ## Constraints
