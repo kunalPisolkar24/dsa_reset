@@ -4,9 +4,7 @@
 
 ## Problem Statement
 
-Given an array of **positive integers** `nums` and a positive integer `k`, return the **minimal length** of a contiguous subarray of which the sum is **greater than or equal to `k`**. If there is no such subarray, return `0` (or `-1` depending on tradition - let's use `0` to match LeetCode "Minimum Size Subarray Sum").
-
-Actually, the user requested `-1` if none exists. So let's return `-1`.
+Given an array of **positive integers** `nums` and a positive integer `k`, return the **minimal length** of a contiguous subarray of which the sum is **greater than or equal to `k`**. If there is no such subarray, return `-1`.
 
 ### Example Testcases
 
