@@ -1,27 +1,31 @@
-# 18. Exactly K Bad Characters
+# 18. Substrings with Exactly K Bad Characters
 
 **Difficulty:** Medium
 
 ## Problem Statement
 
-Given a string `s`, a vector of bad characters `bad`, and an integer `k`, return the **number of substrings** that contain **exactly `k` bad characters**.
+Given a string `s`, a list of "bad" characters `bad`, and an integer `k`, return the **number of substrings** of `s` that contain **exactly `k` bad characters**.
 
-A bad character is any character present in the `bad` list.
+A character is considered **bad** if it is present in the provided `bad` list.
 
-### Example Testcases
+### Examples
 
 **Example 1:**
 ```
 Input: s = "abcde", bad = ['b', 'd'], k = 2
 Output: 4
-Explanation: Substrings with exactly 2 bad characters ('b' and 'd'): "abcd", "abcde", "bcd", "bcde".
+Explanation: The substrings with exactly 2 bad characters ('b' and 'd') are:
+- "abcd" (contains 'b' and 'd')
+- "abcde" (contains 'b' and 'd')
+- "bcd" (contains 'b' and 'd')
+- "bcde" (contains 'b' and 'd')
 ```
 
 **Example 2:**
 ```
 Input: s = "aaa", bad = ['b'], k = 1
 Output: 0
-Explanation: No bad characters exist in the string.
+Explanation: The string "aaa" contains no 'b', so no substring can have exactly 1 bad character.
 ```
 
 ## Constraints

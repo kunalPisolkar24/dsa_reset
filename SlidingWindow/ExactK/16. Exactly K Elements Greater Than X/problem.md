@@ -1,25 +1,28 @@
-# 16. Exactly K Elements Greater Than X
+# 16. Subarrays with Exactly K Elements Greater than X
 
 **Difficulty:** Medium
 
 ## Problem Statement
 
-Given an array `nums`, an integer `k`, and an integer `x`, return the **number of subarrays** that contain **exactly `k` elements greater than `x`**.
+Given an integer array `nums`, an integer `k`, and an integer `x`, return the **number of subarrays** that contain **exactly `k` elements** that are **greater than `x`**.
 
-### Example Testcases
+### Examples
 
 **Example 1:**
 ```
 Input: nums = [1, 5, 2, 4, 3, 7], k = 2, x = 4
 Output: 2
-Explanation: Subarrays with exactly 2 elements > 4: [5, 2, 4, 3, 7] — has 5 and 7 (2 elements). [4, 3, 7] — 7 is > 4 (only 1 element)... actually [5, 2, 4, 3, 7] has 5, 7 > 4 so 2 elements. Also [1, 5, 2, 4, 3, 7] has 5, 7 > 4 so 2 elements. Count = 2.
+Explanation: The elements greater than 4 are 5 and 7.
+The subarrays containing exactly two such elements are:
+- [1, 5, 2, 4, 3, 7] (contains 5 and 7)
+- [5, 2, 4, 3, 7] (contains 5 and 7)
 ```
 
 **Example 2:**
 ```
 Input: nums = [1, 2, 3], k = 1, x = 5
 Output: 0
-Explanation: No element is greater than 5.
+Explanation: There are no elements greater than 5 in the array.
 ```
 
 ## Constraints

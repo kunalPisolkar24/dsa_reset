@@ -1,4 +1,4 @@
-# 13. Balanced Odd Segment
+# 13. Subarrays with Exactly K Odd Numbers
 
 **Difficulty:** Medium
 
@@ -6,20 +6,24 @@
 
 Given an integer array `nums` and an integer `k`, return the **number of subarrays** that contain **exactly `k` odd numbers**.
 
-### Example Testcases
+- This is equivalent to finding the number of "nice" subarrays as defined in some competitive programming platforms.
+
+### Examples
 
 **Example 1:**
 ```
 Input: nums = [1, 1, 2, 1, 1], k = 3
 Output: 2
-Explanation: Subarrays with exactly 3 odd numbers: [1, 1, 2, 1] and [1, 2, 1, 1].
+Explanation: The subarrays with exactly 3 odd numbers are:
+- [1, 1, 2, 1] (at indices 0 to 3)
+- [1, 2, 1, 1] (at indices 1 to 4)
 ```
 
 **Example 2:**
 ```
 Input: nums = [2, 4, 6], k = 1
 Output: 0
-Explanation: No odd numbers exist in the array.
+Explanation: There are no odd numbers in the array.
 ```
 
 ## Constraints

@@ -1,25 +1,29 @@
-# 15. Exactly K Distinct Integers
+# 15. Subarrays with K Distinct Integers
 
 **Difficulty:** Hard
 
 ## Problem Statement
 
-Given an integer array `nums` and an integer `k`, return the **number of subarrays** that contain **exactly `k` distinct integers**.
+Given an integer array `nums` and an integer `k`, return the *number of **good subarrays*** of `nums`.
 
-### Example Testcases
+A **good subarray** is a subarray that contains exactly `k` different integers.
+
+- For example, `[1, 2, 3, 1, 2]` has `3` different integers: `1`, `2`, and `3`.
+
+### Examples
 
 **Example 1:**
 ```
 Input: nums = [1, 2, 1, 2, 3], k = 2
 Output: 7
-Explanation: Subarrays with exactly 2 distinct integers: [1, 2], [2, 1], [1, 2], [2, 1, 2], [1, 2, 1, 2], [2, 3], [1, 2, 3] — wait, [1, 2, 3] has 3 distinct. Correct subarrays: [1,2], [2,1], [1,2], [2,1,2], [1,2,1], [1,2,1,2], [2,3].
+Explanation: Subarrays formed with exactly 2 different integers: [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2].
 ```
 
 **Example 2:**
 ```
 Input: nums = [1, 2, 3], k = 1
 Output: 3
-Explanation: Subarrays [1], [2], [3].
+Explanation: Subarrays formed with exactly 1 different integer: [1], [2], [3].
 ```
 
 ## Constraints
