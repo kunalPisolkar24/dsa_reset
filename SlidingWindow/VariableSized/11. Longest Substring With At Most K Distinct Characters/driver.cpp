@@ -41,7 +41,7 @@ public:
             { "aaabbb", 2, 6 },
             { "abcabcabc", 3, 9 },
             { "abaccc", 2, 4 },
-            { "pwwkew", 2, 4 }
+            { "pwwkew", 2, 3 }
         };
 
         Solution sol;
