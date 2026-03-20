@@ -1,4 +1,4 @@
-# 17. Exactly K Zeros
+# 14. Exactly K Zeros
 
 **Difficulty:** Medium
 

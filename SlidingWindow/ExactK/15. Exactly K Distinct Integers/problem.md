@@ -1,4 +1,4 @@
-# 18. Exactly K Distinct Integers
+# 15. Exactly K Distinct Integers
 
 **Difficulty:** Hard
 

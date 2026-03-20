@@ -1,4 +1,4 @@
-# 21. Exactly K Bad Characters
+# 18. Exactly K Bad Characters
 
 **Difficulty:** Medium
 

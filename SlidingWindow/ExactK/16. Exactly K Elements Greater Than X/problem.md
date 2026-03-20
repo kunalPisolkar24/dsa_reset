@@ -1,4 +1,4 @@
-# 19. Exactly K Elements Greater Than X
+# 16. Exactly K Elements Greater Than X
 
 **Difficulty:** Medium
 

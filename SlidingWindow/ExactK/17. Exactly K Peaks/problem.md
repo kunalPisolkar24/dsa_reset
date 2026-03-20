@@ -1,4 +1,4 @@
-# 20. Exactly K Peaks
+# 17. Exactly K Peaks
 
 **Difficulty:** Hard
 

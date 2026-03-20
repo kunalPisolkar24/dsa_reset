@@ -1,4 +1,4 @@
-# 16. Balanced Odd Segment
+# 13. Balanced Odd Segment
 
 **Difficulty:** Medium
 
