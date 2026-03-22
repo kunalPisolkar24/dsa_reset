@@ -3,26 +3,31 @@
 using namespace std;
 
 class MinStack {
+  stack<pair<int, int>> st;
+
 public:
-    MinStack() {
-        // Your code here
+  MinStack() {}
+
+  void push(int val) {
+    if (st.empty()) {
+      st.push({val, val});
+    } else {
+      st.push({val, min(st.top().second, val)});
     }
-    
-    void push(int val) {
-        // Your code here
-    }
-    
-    void pop() {
-        // Your code here
-    }
-    
-    int top() {
-        // Your code here
-        return -1;
-    }
-    
-    int getMin() {
-        // Your code here
-        return -1;
-    }
+  }
+
+  void pop() {
+    if(st.empty()) return;
+    st.pop();
+  }
+
+  int top() {
+    if(st.empty()) return -1;
+    return st.top().first;
+  }
+
+  int getMin() {
+    if(st.empty()) return -1;
+    return st.top().second;
+  }
 };
