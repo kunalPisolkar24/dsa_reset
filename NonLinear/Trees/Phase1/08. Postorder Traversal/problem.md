@@ -23,14 +23,26 @@ Postorder: [3, 2, 1]
 
 **Example 2:**
 ```
-Input: root = [1,2,3]
-Output: [2,3,1]
+Input: root = [1,2,3,4,5,6,7]
+Output: [4,5,2,6,7,3,1]
+Explanation:
+      1
+    /   \
+   2     3
+  / \   / \
+ 4   5 6   7
+Postorder: [4, 5, 2, 6, 7, 3, 1]
 ```
 
 **Example 3:**
 ```
-Input: root = []
-Output: []
+Input: root = [1,null,2]
+Output: [2,1]
+Explanation:
+1
+ \
+  2
+Postorder: [2, 1]
 ```
 
 ## Constraints

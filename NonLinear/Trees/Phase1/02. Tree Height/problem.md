@@ -25,12 +25,26 @@ The longest path is 3 -> 20 -> 15 (or 7), which has 3 nodes.
 ```
 Input: root = [1,null,2]
 Output: 2
+Explanation:
+  1
+   \
+    2
+The longest path is 1 -> 2, depth is 2.
 ```
 
 **Example 3:**
 ```
-Input: root = []
-Output: 0
+Input: root = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+Output: 4
+Explanation:
+           1
+        /     \
+       2       3
+      / \     / \
+     4   5   6   7
+    / \ / \ / \ / \
+   8  9 10 11 12 13 14 15
+The tree is a perfect binary tree of height 4.
 ```
 
 ## Constraints

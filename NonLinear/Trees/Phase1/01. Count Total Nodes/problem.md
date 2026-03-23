@@ -36,9 +36,17 @@ There are 3 nodes in total.
 
 **Example 3:**
 ```
-Input: root = []
-Output: 0
-Explanation: The tree is empty.
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,null,1]
+Output: 10
+Explanation:
+      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \      \
+7    2      1
+There are 10 nodes in total.
 ```
 
 ## Constraints

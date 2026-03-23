@@ -36,8 +36,15 @@ This tree is not symmetric.
 
 **Example 3:**
 ```
-Input: root = []
+Input: root = [1,2,2,3,None,None,3]
 Output: true
+Explanation:
+    1
+   / \
+  2   2
+ /     \
+3       3
+This tree is symmetric.
 ```
 
 ## Constraints
