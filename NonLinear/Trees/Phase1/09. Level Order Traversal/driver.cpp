@@ -92,6 +92,27 @@ public:
                 passedCount++;
             } else {
                 cout << Color::RED << "✗ Test " << i + 1 << " Failed" << Color::RESET << "\n";
+                cout << "     " << Color::RED << "Input Nodes: [";
+                for(int j=0; j<tc.nodes.size(); j++) {
+                    if(tc.nodes[j] == -100000) cout << "null";
+                    else cout << tc.nodes[j];
+                    if(j < tc.nodes.size()-1) cout << ",";
+                }
+                cout << "]" << Color::RESET << "\n";
+                cout << "     " << Color::RED << "Expected: [";
+                for(int i=0; i<tc.expected.size(); i++) {
+                    cout << "[";
+                    for(int j=0; j<tc.expected[i].size(); j++) cout << tc.expected[i][j] << (j == tc.expected[i].size()-1 ? "" : ",");
+                    cout << "]" << (i == tc.expected.size()-1 ? "" : ",");
+                }
+                cout << "]" << Color::RESET << "\n";
+                cout << "     " << Color::RED << "Got: [";
+                for(int i=0; i<result.size(); i++) {
+                    cout << "[";
+                    for(int j=0; j<result[i].size(); j++) cout << result[i][j] << (j == result[i].size()-1 ? "" : ",");
+                    cout << "]" << (i == result.size()-1 ? "" : ",");
+                }
+                cout << "]" << Color::RESET << "\n";
             }
             
             if (!logs.empty()) {
