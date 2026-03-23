@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class Solution {
+public:
+    string makeGood(string s) {
+        // Your code here
+        return "";
+    }
+};
