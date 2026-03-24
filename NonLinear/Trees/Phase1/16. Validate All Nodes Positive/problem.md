@@ -1,4 +1,4 @@
-# 17. Validate All Nodes Positive
+# 16. Validate All Nodes Positive
 
 **Difficulty:** Easy
 

@@ -20,7 +20,7 @@ const string Color::BOLD = "\033[1m";
 struct TestCase {
     vector<int> nodes;
     
-    int expected;
+    bool expected;
 };
 
 TreeNode* buildTree(const vector<int>& nodes) {
@@ -50,28 +50,28 @@ class TestRunner {
 public:
     void run() {
         vector<TestCase> cases = {
-            { {42}, 42 },
-            { {1}, 1 },
-            { {1, 2, 3}, 6 },
-            { {1, 2, 3, 4, 5, 6, 7}, 28 },
-            { {1, 2, -100000, 3, -100000, 4}, 10 },
-            { {1, -100000, 2, -100000, 3, -100000, 4}, 10 },
-            { {1, 2, 3, 4, -100000, -100000, 5}, 15 },
-            { {1, 2, 2, 3, 4, 4, 3}, 19 },
-            { {1, 2, 2, -100000, 3, -100000, 3}, 11 },
-            { {10, 5, 15, 3, 7, 12, 18}, 70 },
-            { {-10, 9, 20, -100000, -100000, 15, 7}, 41 },
-            { {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}, 120 },
-            { {3, 9, 20, -100000, -100000, 15, 7}, 54 },
-            { {1, -100000, 2, 3}, 6 },
-            { {10, 4, 6, -100000, -100000, 3, 3}, 26 }
+            { {42}, false },
+            { {1}, false },
+            { {1, 2, 3}, false },
+            { {1, 2, 3, 4, 5, 6, 7}, false },
+            { {1, 2, -100000, 3, -100000, 4}, false },
+            { {1, -100000, 2, -100000, 3, -100000, 4}, false },
+            { {1, 2, 3, 4, -100000, -100000, 5}, false },
+            { {1, 2, 2, 3, 4, 4, 3}, false },
+            { {1, 2, 2, -100000, 3, -100000, 3}, false },
+            { {10, 5, 15, 3, 7, 12, 18}, false },
+            { {-10, 9, 20, -100000, -100000, 15, 7}, false },
+            { {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}, false },
+            { {3, 9, 20, -100000, -100000, 15, 7}, false },
+            { {1, -100000, 2, 3}, false },
+            { {10, 4, 6, -100000, -100000, 3, 3}, true }
         };
 
         Solution sol;
         int passedCount = 0;
         int totalCount = cases.size();
 
-        cout << Color::BOLD << "Running " << totalCount << " Tests for 15. Sum of Each Subtree..." << Color::RESET << "\n\n";
+        cout << Color::BOLD << "Running " << totalCount << " Tests for 15. Node Equals Sum of Children..." << Color::RESET << "\n\n";
 
         for (int i = 0; i < totalCount; i++) {
             TestCase tc = cases[i];
@@ -80,7 +80,7 @@ public:
             stringstream buffer;
             streambuf* oldCoutBuf = cout.rdbuf(buffer.rdbuf());
             
-            auto result = sol.sumOfTree(root);
+            auto result = sol.hasChildSum(root);
             
             cout.rdbuf(oldCoutBuf);
             string logs = buffer.str();
@@ -99,8 +99,8 @@ public:
                     if(j < tc.nodes.size()-1) cout << ",";
                 }
                 cout << "]" << Color::RESET << "\n";
-                cout << "     " << Color::RED << "Expected: " << tc.expected << Color::RESET << "\n";
-                cout << "     " << Color::RED << "Got: " << result << Color::RESET << "\n";
+                cout << "     " << Color::RED << "Expected: " << (tc.expected ? "true" : "false") << Color::RESET << "\n";
+                cout << "     " << Color::RED << "Got: " << (result ? "true" : "false") << Color::RESET << "\n";
             }
             
             if (!logs.empty()) {

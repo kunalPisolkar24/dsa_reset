@@ -50,20 +50,20 @@ class TestRunner {
 public:
     void run() {
         vector<TestCase> cases = {
-            { {42}, false },
-            { {1}, false },
-            { {1, 2, 3}, false },
-            { {1, 2, 3, 4, 5, 6, 7}, false },
-            { {1, 2, -100000, 3, -100000, 4}, false },
-            { {1, -100000, 2, -100000, 3, -100000, 4}, false },
-            { {1, 2, 3, 4, -100000, -100000, 5}, false },
-            { {1, 2, 2, 3, 4, 4, 3}, false },
-            { {1, 2, 2, -100000, 3, -100000, 3}, false },
-            { {10, 5, 15, 3, 7, 12, 18}, false },
+            { {42}, true },
+            { {1}, true },
+            { {1, 2, 3}, true },
+            { {1, 2, 3, 4, 5, 6, 7}, true },
+            { {1, 2, -100000, 3, -100000, 4}, true },
+            { {1, -100000, 2, -100000, 3, -100000, 4}, true },
+            { {1, 2, 3, 4, -100000, -100000, 5}, true },
+            { {1, 2, 2, 3, 4, 4, 3}, true },
+            { {1, 2, 2, -100000, 3, -100000, 3}, true },
+            { {10, 5, 15, 3, 7, 12, 18}, true },
             { {-10, 9, 20, -100000, -100000, 15, 7}, false },
-            { {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}, false },
-            { {3, 9, 20, -100000, -100000, 15, 7}, false },
-            { {1, -100000, 2, 3}, false },
+            { {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}, true },
+            { {3, 9, 20, -100000, -100000, 15, 7}, true },
+            { {1, -100000, 2, 3}, true },
             { {10, 4, 6, -100000, -100000, 3, 3}, true }
         };
 
@@ -71,7 +71,7 @@ public:
         int passedCount = 0;
         int totalCount = cases.size();
 
-        cout << Color::BOLD << "Running " << totalCount << " Tests for 16. Node Equals Sum of Children..." << Color::RESET << "\n\n";
+        cout << Color::BOLD << "Running " << totalCount << " Tests for 16. Check if All Nodes Are Positive..." << Color::RESET << "\n\n";
 
         for (int i = 0; i < totalCount; i++) {
             TestCase tc = cases[i];
@@ -80,7 +80,7 @@ public:
             stringstream buffer;
             streambuf* oldCoutBuf = cout.rdbuf(buffer.rdbuf());
             
-            auto result = sol.hasChildSum(root);
+            auto result = sol.allPositive(root);
             
             cout.rdbuf(oldCoutBuf);
             string logs = buffer.str();
