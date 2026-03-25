@@ -15,15 +15,9 @@ struct TreeNode {
 class Solution {
 public:
   int findMax(TreeNode *root) {
-    int mx = numeric_limits<int>::min();
-    function<void(TreeNode *)> sol = [&](TreeNode *root) -> void {
-      if (!root)
-        return;
-      mx = max(root->val, mx);
-      sol(root->left);
-      sol(root->right);
-    };
-    sol(root);
-    return mx;
+    if(!root) return INT_MIN;
+    int left = findMax(root->left);
+    int right = findMax(root->right);
+    return max(root->val, max(left, right));
   }
 };
