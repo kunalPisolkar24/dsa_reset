@@ -15,15 +15,10 @@ struct TreeNode {
 class Solution {
 public:
   int countNodesGE(TreeNode *root, int x) {
-    int count = 0;
-    function<void(TreeNode *)> sol = [&](TreeNode *root) -> void {
-      if (!root)
-        return;
-      if(root->val >= x) count++;
-      sol(root->left);
-      sol(root->right);
-    };
-    sol(root);
-    return count;
+    if (!root)
+      return 0;
+    int left = countNodesGE(root->left, x);
+    int right = countNodesGE(root->right, x);
+    return (root->val >= x) + left + right;
   }
 };
