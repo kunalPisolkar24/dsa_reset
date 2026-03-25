@@ -16,29 +16,23 @@ class Solution {
 public:
   int maxRootToLeafSum(TreeNode *root) {
     int mx = numeric_limits<int>::min();
-    if(!root->left and !root->right) return root->val;
-    queue<pair<TreeNode *, int>> q;
-    q.push({root, root->val});
 
-    while (!q.empty()) {
-      int len = q.size();
-      while (len--) {
-        auto [node, sum] = q.front();
-        q.pop();
-
-        if (!node->left and !node->right) {
-          mx = max(mx, sum);
-        }
-
-        if (node->left) {
-          q.push({node->left, sum + node->left->val});
-        }
-        if (node->right) {
-          q.push({node->right, sum + node->right->val});
-        }
+    function<void(TreeNode *, int)> sol = [&](TreeNode *node, int sum) -> void {
+      if (!node)
+        return;
+      if (!node->left and !node->right) {
+        mx = max(mx, sum);
       }
-    }
 
+      if (node->left) {
+        sol(node->left, node->left->val + sum);
+      }
+      if (node->right) {
+        sol(node->right, node->right->val + sum);
+      }
+    };
+
+    sol(root, root->val);
     return mx;
   }
 };
