@@ -5,6 +5,6 @@ using namespace std;
 class Solution {
 public:
     int removeLastSetBit(int n) {
-        return n;
+        return n & (n - 1);
     }
 };
