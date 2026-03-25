@@ -15,20 +15,18 @@ struct TreeNode {
 class Solution {
 public:
   bool hasChildSum(TreeNode *root) {
-    bool res = false;
+    if (!root)
+      return false;
 
-    function<bool(TreeNode *)> sol = [&](TreeNode *node) -> bool {
-      if (!node)
-        return 0;
-      int left = node->left ? node->left->val : 0;
-      int right = node->right ? node->right->val : 0;
-      if ((left + right) == node->val) {
-        return true;
-      }
+    if (!root->left and !root->right)
+      return false;
 
-      return sol(node->left) or sol(node->right);
-    };
+    int left = root->left ? root->left->val : 0;
+    int right = root->right ? root->right->val : 0;
 
-    return sol(root);
+    if (root->val == (left + right))
+      return true;
+
+    return hasChildSum(root->left) or hasChildSum(root->right);
   }
 };
