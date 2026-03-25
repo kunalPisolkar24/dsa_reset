@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -15,24 +16,17 @@ struct TreeNode {
 class Solution {
 public:
   int maxRootToLeafSum(TreeNode *root) {
-    int mx = numeric_limits<int>::min();
+    if (!root->left and !root->right) {
+      return root->val;
+    }
 
-    function<void(TreeNode *, int)> sol = [&](TreeNode *node, int sum) -> void {
-      if (!node)
-        return;
-      if (!node->left and !node->right) {
-        mx = max(mx, sum);
-      }
+    if (!root->left)
+      return root->val + maxRootToLeafSum(root->right);
 
-      if (node->left) {
-        sol(node->left, node->left->val + sum);
-      }
-      if (node->right) {
-        sol(node->right, node->right->val + sum);
-      }
-    };
+    if (!root->right)
+      return root->val + maxRootToLeafSum(root->left);
 
-    sol(root, root->val);
-    return mx;
+    return root->val +
+           max(maxRootToLeafSum(root->left), maxRootToLeafSum(root->right));
   }
 };
