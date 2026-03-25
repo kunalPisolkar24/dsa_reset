@@ -5,6 +5,6 @@ using namespace std;
 class Solution {
 public:
     bool isOdd(int n) {
-        return false;
+        return (n & 1);
     }
 };
