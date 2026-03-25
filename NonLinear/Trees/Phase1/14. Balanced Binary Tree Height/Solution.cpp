@@ -15,25 +15,15 @@ struct TreeNode {
 class Solution {
 public:
   int checkHeight(TreeNode *root) {
-    int f = true;
-
-    function<int(TreeNode *)> sol = [&](TreeNode *node) -> int {
-      if (!node or !f)
-        return 0;
-
-      int left = sol(node->left);
-      int right = sol(node->right);
-
-      if (abs(right - left) > 1) {
-        f = false;
-        return 0;
-      }
-
-      return 1 + max(left, right);
-    };
-
-    int h = sol(root);
-    return (f ? h : -1);
-    return -1;
+    if (!root)
+      return 0;
+    int left = checkHeight(root->left);
+    int right = checkHeight(root->right);
+    if (left == -1 or right == -1)
+      return -1;
+    if (abs(left - right) > 1) {
+      return -1;
+    }
+    return 1 + max(left, right);
   }
 };
