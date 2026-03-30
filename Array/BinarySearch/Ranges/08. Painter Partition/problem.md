@@ -1,4 +1,4 @@
-# 9. Painter Partition
+# 8. Painter Partition
 
 **Difficulty:** Medium
 

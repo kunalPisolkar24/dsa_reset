@@ -1,4 +1,4 @@
-# 13. Smallest Maximum Load
+# 12. Smallest Maximum Load
 
 **Difficulty:** Medium
 

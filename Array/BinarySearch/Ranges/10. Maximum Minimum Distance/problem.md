@@ -1,4 +1,4 @@
-# 11. Maximum Minimum Distance
+# 10. Maximum Minimum Distance
 
 **Difficulty:** Medium
 

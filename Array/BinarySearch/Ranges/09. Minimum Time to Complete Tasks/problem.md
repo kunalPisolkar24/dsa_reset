@@ -1,4 +1,4 @@
-# 10. Minimum Time to Complete Tasks
+# 9. Minimum Time to Complete Tasks
 
 **Difficulty:** Medium
 

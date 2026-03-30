@@ -1,4 +1,4 @@
-# 16. First Failing Point
+# 15. First Failing Point
 
 **Difficulty:** Medium/Hard
 

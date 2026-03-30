@@ -1,4 +1,4 @@
-# 6. Minimum Eating Speed
+# 5. Minimum Eating Speed
 
 **Difficulty:** Medium
 

@@ -1,4 +1,4 @@
-# 12. Minimum Days for Bouquets
+# 11. Minimum Days for Bouquets
 
 **Difficulty:** Medium
 

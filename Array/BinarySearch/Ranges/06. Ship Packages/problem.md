@@ -1,4 +1,4 @@
-# 7. Ship Packages
+# 6. Ship Packages
 
 **Difficulty:** Medium
 

@@ -1,4 +1,4 @@
-# 4. Minimum Divisor
+# 3. Minimum Divisor
 
 **Difficulty:** Easy
 

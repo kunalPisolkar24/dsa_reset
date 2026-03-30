@@ -1,4 +1,4 @@
-# 5. Maximum Equal Pieces
+# 4. Maximum Equal Pieces
 
 **Difficulty:** Medium
 

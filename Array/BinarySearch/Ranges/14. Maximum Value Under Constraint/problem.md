@@ -1,4 +1,4 @@
-# 15. Maximum Value Under Constraint
+# 14. Maximum Value Under Constraint
 
 **Difficulty:** Medium
 

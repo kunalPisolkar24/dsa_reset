@@ -1,4 +1,4 @@
-# 8. Allocate Books
+# 7. Allocate Books
 
 **Difficulty:** Medium
 
