@@ -35,9 +35,3 @@ Output: []
 - `2 <= candidates[i] <= 40`
 - All elements of `candidates` are **distinct**.
 - `1 <= target <= 40`
-
-## Notes
-
-- Use the **Loop-based Backtracking** pattern.
-- **Unlimited Usage**: In the recursive call, pass the current index **`i`** as the next `start` index. This allows the recursive step to pick the same element again.
-- **Pruning**: Sort the `candidates` array first. If the `currentSum + candidates[i]` exceeds `target`, you can `break` the loop because all subsequent elements are also too large.

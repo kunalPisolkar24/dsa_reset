@@ -30,13 +30,3 @@ Output: [[1,1]]
 
 - `1 <= nums.length <= 8`
 - `-10 <= nums[i] <= 10`
-
-## Notes
-
-- Use the **Loop-based Backtracking** pattern with **`visited` array**.
-- **Duplicate Suppression**: 
-    1. Sort the input array `nums`.
-    2. Use a `visited` array to keep track of used indices.
-    3. In the loop, if an element is the same as the previous one and the previous one was **not used** in the current prefix, skip it:
-       `if (i > 0 && nums[i] == nums[i-1] && !visited[i-1]) continue;`
-- This ensures that for a set of identical numbers, only the first available one can be used to start a new branch at any given position, preventing duplicate permutations.

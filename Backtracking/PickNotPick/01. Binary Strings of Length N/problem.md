@@ -39,9 +39,3 @@ Explanation: There are 2^3 = 8 binary strings of length 3.
 - Each string must have length exactly `n`.
 - All strings must be unique.
 - Output order does not matter.
-
-## Notes
-
-- Model this as a **pick / not-pick** recursion: at each position, independently choose `'0'` or `'1'`.
-- Base case: when the current string has length `n`, add it to the result.
-- Total output size = `2^n` strings.

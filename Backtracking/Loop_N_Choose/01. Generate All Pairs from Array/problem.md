@@ -35,9 +35,3 @@ Explanation: Even if elements are the same value, they are distinct by index.
 - `2 <= arr.length <= 50`
 - `-10^4 <= arr[i] <= 10^4`
 - The output will contain exactly `n * (n - 1) / 2` pairs.
-
-## Notes
-
-- Use the **Loop-based Backtracking** pattern.
-- The base case for recursion is when the current combination size reaches 2.
-- In each recursive step, start the loop from `index + 1` to ensure `i < j`.

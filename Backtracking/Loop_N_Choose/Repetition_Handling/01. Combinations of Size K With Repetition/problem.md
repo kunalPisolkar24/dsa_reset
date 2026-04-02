@@ -34,9 +34,3 @@ Output: [[3,3]]
 - `1 <= nums.length <= 15`
 - `1 <= nums[i] <= 50`
 - `0 <= k <= 10`
-
-## Notes
-
-- Use the **Loop-based Backtracking** pattern.
-- **Repetition Logic**: In physical combinations without replacement, we recurse with `i + 1`. To allow replacement, recurse with **`i`** instead. This allows the same element to be picked again in the next recursive step.
-- The base case is when the current combination size reaches `k`.

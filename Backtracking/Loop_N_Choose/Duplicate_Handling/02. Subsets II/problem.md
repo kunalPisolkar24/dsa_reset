@@ -32,10 +32,3 @@ Output: [[], [1], [1, 1], [1, 1, 1]]
 
 - `1 <= nums.length <= 10`
 - `-10 <= nums[i] <= 10`
-
-## Notes
-
-- Use the **Loop-based Backtracking** pattern.
-- **Duplicate Suppression**: Sort the array first to group identical elements.
-- In the loop, use `if (i > start && nums[i] == nums[i-1]) continue;` to skip duplicates at the same recursive level.
-- Record the current subset at the **start** of each recursive call (since every node in the recursion tree is a unique subset).
