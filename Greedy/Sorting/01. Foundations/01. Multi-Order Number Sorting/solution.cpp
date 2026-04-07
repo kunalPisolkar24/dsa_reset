@@ -4,19 +4,24 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> sortAscending(vector<int> arr) {
-        // Implement ascending sort
-        return {};
-    }
+  vector<int> sortAscending(vector<int> arr) {
+    sort(arr.begin(), arr.end());
+    return arr;
+  }
 
-    vector<int> sortDescending(vector<int> arr) {
-        // Implement descending sort
-        return {};
-    }
+  vector<int> sortDescending(vector<int> arr) {
+    sort(arr.begin(), arr.end(), greater<int>());
+    return arr;
+  }
 
-    vector<int> sortByDistance(vector<int> arr, int k) {
-        // Implement sort by distance from k
-        // If tie, smaller element first
-        return {};
-    }
+  vector<int> sortByDistance(vector<int> arr, int k) {
+    sort(arr.begin(), arr.end(), [&](int a, int b) {
+      int x = abs(a - k), y = abs(b - k);
+      if(x == y) {
+        return a < b;
+      }
+      return x < y;
+    });
+    return arr;
+  }
 };
