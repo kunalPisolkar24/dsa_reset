@@ -5,7 +5,11 @@ using namespace std;
 class Solution {
 public:
     vector<string> sortByLength(vector<string> arr) {
-        // Implement sort by length (ascending), then lexicographically
-        return {};
+        sort(arr.begin(), arr.end(), [](string &a, string &b) {
+            if(a.length() == b.length()) 
+                return a < b;
+            return a.length() < b.length();
+        });
+        return arr;
     }
 };
