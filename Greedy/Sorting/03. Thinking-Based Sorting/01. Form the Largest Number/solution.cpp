@@ -5,8 +5,6 @@ using namespace std;
 class Solution {
 public:
     string largestNumber(vector<int> arr) {
-        // Implement logic to form the largest possible number
-        // Return result as a string
         return "";
     }
 };
