@@ -1,4 +1,4 @@
-# 7. Form the Largest Number
+# 1. Form the Largest Number
 
 **Difficulty:** Medium
 

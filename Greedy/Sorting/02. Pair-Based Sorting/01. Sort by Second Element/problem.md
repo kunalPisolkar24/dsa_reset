@@ -1,4 +1,4 @@
-# 4. Sort by Second Element
+# 1. Sort by Second Element
 
 **Difficulty:** Medium
 

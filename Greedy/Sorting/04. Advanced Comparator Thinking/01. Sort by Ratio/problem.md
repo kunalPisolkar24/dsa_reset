@@ -1,4 +1,4 @@
-# 10. Sort by Ratio
+# 1. Sort by Ratio
 
 **Difficulty:** Hard
 

@@ -1,4 +1,4 @@
-# 11. Multi-Level String Sorting
+# 2. Multi-Level String Sorting
 
 **Difficulty:** Hard
 

@@ -1,4 +1,4 @@
-# 8. Interval Sorting Study
+# 2. Interval Sorting Study
 
 **Difficulty:** Medium
 

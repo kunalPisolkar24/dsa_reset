@@ -1,4 +1,4 @@
-# 9. Stability Observation
+# 3. Stability Observation
 
 **Difficulty:** Medium
 

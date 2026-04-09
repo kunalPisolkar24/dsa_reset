@@ -1,4 +1,4 @@
-# 5. Sort by Difference
+# 2. Sort by Difference
 
 **Difficulty:** Medium
 

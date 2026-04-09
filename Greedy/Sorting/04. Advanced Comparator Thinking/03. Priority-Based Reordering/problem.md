@@ -1,4 +1,4 @@
-# 12. Priority-Based Reordering
+# 3. Priority-Based Reordering
 
 **Difficulty:** Hard
 

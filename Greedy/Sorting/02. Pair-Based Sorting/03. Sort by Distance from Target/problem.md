@@ -1,4 +1,4 @@
-# 6. Sort by Distance from Target
+# 3. Sort by Distance from Target
 
 **Difficulty:** Medium
 
