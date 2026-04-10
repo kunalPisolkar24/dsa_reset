@@ -94,9 +94,15 @@ public:
         for (int i = 0; i < totalCount; i++) {
             TestCase& tc = cases[i];
             
+            stringstream buffer;
+            streambuf* oldCoutBuf = cout.rdbuf(buffer.rdbuf());
+
             auto resStart = sol.sortByStart(tc.intervals);
             auto resEnd   = sol.sortByEnd(tc.intervals);
             auto resLen   = sol.sortByLength(tc.intervals);
+
+            cout.rdbuf(oldCoutBuf);
+            string logs = buffer.str();
 
             bool ok = (resStart == tc.expectedStart && resEnd == tc.expectedEnd && resLen == tc.expectedLength);
 
@@ -109,6 +115,13 @@ public:
                 if (resStart != tc.expectedStart) cout << "     " << Color::RED << "Start  - Expected: " << ResultFormatter::vectorToString(tc.expectedStart) << ", Got: " << ResultFormatter::vectorToString(resStart) << Color::RESET << "\n";
                 if (resEnd != tc.expectedEnd) cout << "     " << Color::RED << "End    - Expected: " << ResultFormatter::vectorToString(tc.expectedEnd) << ", Got: " << ResultFormatter::vectorToString(resEnd) << Color::RESET << "\n";
                 if (resLen != tc.expectedLength) cout << "     " << Color::RED << "Length - Expected: " << ResultFormatter::vectorToString(tc.expectedLength) << ", Got: " << ResultFormatter::vectorToString(resLen) << Color::RESET << "\n";
+            }
+
+            if (!logs.empty()) {
+                cout << Color::YELLOW << "   Logs:" << Color::RESET << "\n";
+                stringstream logStream(logs);
+                string line;
+                while (getline(logStream, line)) cout << "     " << line << "\n";
             }
         }
 

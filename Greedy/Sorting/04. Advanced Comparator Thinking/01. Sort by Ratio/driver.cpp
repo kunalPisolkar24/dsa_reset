@@ -53,7 +53,7 @@ public:
             { {{7, 3}, {5, 2}}, {{5, 2}, {7, 3}} }, // 2.5 vs 2.33
             { {{10, 3}, {7, 2}, {4, 1}}, {{4, 1}, {7, 2}, {10, 3}} }, // 4, 3.5, 3.33
             { {{1, 1}}, {{1, 1}} },
-            { {{10^9, 1}, {1, 10^9}}, {{10^9, 1}, {1, 10^9}} },
+            { {{1000000000, 1}, {1, 1000000000}}, {{1000000000, 1}, {1, 1000000000}} },
             { {{100, 10}, {10, 1}}, {{100, 10}, {10, 1}} },
             { {{3, 5}, {3, 4}, {3, 3}}, {{3, 3}, {3, 4}, {3, 5}} },
             { {{100, 1}, {100, 100}, {100, 10}}, {{100, 1}, {100, 10}, {100, 100}} }
@@ -72,7 +72,13 @@ public:
         for (int i = 0; i < totalCount; i++) {
             TestCase& tc = cases[i];
             
+            stringstream buffer;
+            streambuf* oldCoutBuf = cout.rdbuf(buffer.rdbuf());
+
             vector<pair<int, int>> result = sol.sortByRatio(tc.arr);
+
+            cout.rdbuf(oldCoutBuf);
+            string logs = buffer.str();
 
             if (result == tc.expected) {
                 cout << Color::GREEN << "✓ Test " << i + 1 << " Passed" << Color::RESET << "\n";
@@ -82,6 +88,13 @@ public:
                 cout << "     " << Color::YELLOW << "Input: " << ResultFormatter::vectorToString(tc.arr) << Color::RESET << "\n";
                 cout << "     " << Color::RED << "Expected: " << ResultFormatter::vectorToString(tc.expected) << Color::RESET << "\n";
                 cout << "     " << Color::RED << "Got: " << ResultFormatter::vectorToString(result) << Color::RESET << "\n";
+            }
+
+            if (!logs.empty()) {
+                cout << Color::YELLOW << "   Logs:" << Color::RESET << "\n";
+                stringstream logStream(logs);
+                string line;
+                while (getline(logStream, line)) cout << "     " << line << "\n";
             }
         }
 

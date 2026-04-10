@@ -83,9 +83,15 @@ public:
         for (int i = 0; i < totalCount; i++) {
             TestCase& tc = cases[i];
             
+            stringstream buffer;
+            streambuf* oldCoutBuf = cout.rdbuf(buffer.rdbuf());
+
             vector<int> resAsc = sol.sortAscending(tc.arr);
             vector<int> resDesc = sol.sortDescending(tc.arr);
             vector<int> resDist = sol.sortByDistance(tc.arr, tc.k);
+
+            cout.rdbuf(oldCoutBuf);
+            string logs = buffer.str();
 
             bool passed = (resAsc == tc.expectedAsc && resDesc == tc.expectedDesc && resDist == tc.expectedDist);
 
@@ -108,6 +114,13 @@ public:
                     cout << "     " << Color::RED << "Distance   - Expected: " << ResultFormatter::vectorToString(tc.expectedDist) 
                          << ", Got: " << ResultFormatter::vectorToString(resDist) << Color::RESET << "\n";
                 }
+            }
+
+            if (!logs.empty()) {
+                cout << Color::YELLOW << "   Logs:" << Color::RESET << "\n";
+                stringstream logStream(logs);
+                string line;
+                while (getline(logStream, line)) cout << "     " << line << "\n";
             }
         }
 

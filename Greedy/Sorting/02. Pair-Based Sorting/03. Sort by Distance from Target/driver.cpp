@@ -71,7 +71,13 @@ public:
         for (int i = 0; i < totalCount; i++) {
             TestCase& tc = cases[i];
             
+            stringstream buffer;
+            streambuf* oldCoutBuf = cout.rdbuf(buffer.rdbuf());
+
             vector<int> result = sol.sortByDistance(tc.arr, tc.k);
+
+            cout.rdbuf(oldCoutBuf);
+            string logs = buffer.str();
 
             if (result == tc.expected) {
                 cout << Color::GREEN << "✓ Test " << i + 1 << " Passed" << Color::RESET << "\n";
@@ -81,6 +87,13 @@ public:
                 cout << "     " << Color::YELLOW << "Input: arr=" << ResultFormatter::vectorToString(tc.arr) << ", k=" << tc.k << Color::RESET << "\n";
                 cout << "     " << Color::RED << "Expected: " << ResultFormatter::vectorToString(tc.expected) << Color::RESET << "\n";
                 cout << "     " << Color::RED << "Got: " << ResultFormatter::vectorToString(result) << Color::RESET << "\n";
+            }
+
+            if (!logs.empty()) {
+                cout << Color::YELLOW << "   Logs:" << Color::RESET << "\n";
+                stringstream logStream(logs);
+                string line;
+                while (getline(logStream, line)) cout << "     " << line << "\n";
             }
         }
 
