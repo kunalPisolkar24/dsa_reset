@@ -9,17 +9,14 @@ public:
       return 0;
 
     int MOD = 1e9 + 7;
+    int m = n / 2;
 
-    vector<int> dp(n + 1, 0);
-    dp[0] = 1;
-    if (n >= 2)
-      dp[2] = 1;
-    if (n >= 4)
-      dp[4] = 2;
-
-    for (int i = 6; i <= n; i += 2) {
-      dp[i] = (dp[i - 2] + dp[i - 4]) % MOD;
+    int p0 = 1, p1 = 1;
+    for (int i = 2; i <= m; i++) {
+      int curr = (p0 + p1) % MOD;
+      p0 = p1;
+      p1 = curr;
     }
-    return dp[n];
+    return p1;
   }
 };
