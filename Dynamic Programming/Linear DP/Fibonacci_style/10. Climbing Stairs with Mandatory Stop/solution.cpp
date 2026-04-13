@@ -9,12 +9,13 @@ public:
     auto sol = [&](int n) -> int {
       if (n == 1 or n == 0)
         return 1;
-      vector<int> dp(n + 1, 0);
-      dp[0] = dp[1] = 1;
+      int p1 = 1, p2 = 1;
       for (int i = 2; i <= n; i++) {
-        dp[i] = (dp[i - 1] + dp[i - 2]) % MOD;
+        int curr = (p1 + p2) % MOD;
+        p1 = p2;
+        p2 = curr;
       }
-      return dp[n];
+      return p2;
     };
     return (1LL * sol(m) * sol(n - m)) % MOD;
   }
