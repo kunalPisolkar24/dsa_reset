@@ -6,13 +6,14 @@ class Solution {
 public:
   int minCost(vector<int> &heights) {
     int n = heights.size();
-    vector<int> dp(n + 1, 0);
-    dp[0] = 0;
-    dp[1] = abs(heights[1] - heights[0]);
+    int p1 = 0;
+    int p2 = abs(heights[1] - heights[0]);
     for (int i = 2; i < n; i++) {
-      dp[i] = min(dp[i - 1] + abs(heights[i] - heights[i - 1]),
-                  dp[i - 2] + abs(heights[i] - heights[i - 2]));
+      int curr = min(p2 + abs(heights[i] - heights[i - 1]),
+                     p1 + abs(heights[i] - heights[i - 2]));
+      p1 = p2;
+      p2 = curr;
     }
-    return dp[n - 1];
+    return p2;
   }
 };
