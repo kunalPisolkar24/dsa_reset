@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-You are given a weighted graph. Determine if there exists a path from node `0` to node `n-1` such that the total sum of edge weights on the path is less than or equal to `k`.
+You are given a weighted graph. Determine if there exists a path from node `0` to node `n-1` such that the total sum of edge weights on the path is less than or equal to `k`. If node `n-1` is unreachable from node `0`, return `false`.
 
 ### Example Testcases
 

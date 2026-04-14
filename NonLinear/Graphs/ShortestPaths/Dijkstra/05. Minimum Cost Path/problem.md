@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-Instead of just the distance, return the actual sequence of nodes (the path) that constitutes the shortest path from node `0` to node `n-1`.
+Instead of just the distance, return the actual sequence of nodes (the path) that constitutes the shortest path from node `0` to node `n-1`. If node `n-1` is unreachable from node `0`, return an empty vector.
 
 ### Example Testcases
 

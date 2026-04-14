@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-In a graph where all edges have weight either 0 or 1, find the shortest distance from node `0` to all other nodes. This can be solved more efficiently than standard Dijkstra.
+In a graph where all edges have weight either 0 or 1, find the shortest distance from node `0` to all other nodes. If a node is unreachable from node `0`, its distance should be `-1`. This can be solved more efficiently than standard Dijkstra.
 
 ### Example Testcases
 

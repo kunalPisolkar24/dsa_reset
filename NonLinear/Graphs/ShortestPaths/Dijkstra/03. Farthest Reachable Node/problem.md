@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-From node `0`, identify the node that has the maximum shortest-path distance. If multiple nodes share the same maximum distance, return the one with the smallest index.
+From node `0`, identify the node that has the maximum shortest-path distance among all nodes reachable from node `0`. If multiple reachable nodes share the same maximum distance, return the one with the smallest index. If only node `0` is reachable, return `0`.
 
 ### Example Testcases
 

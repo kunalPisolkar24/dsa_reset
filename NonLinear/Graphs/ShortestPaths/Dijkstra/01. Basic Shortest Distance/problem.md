@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-Given a weighted undirected graph with `n` nodes and `edges` where each edge is `[u, v, w]`, find the shortest distance from node `0` to all other nodes.
+Given a weighted undirected graph with `n` nodes and `edges` where each edge is `[u, v, w]`, find the shortest distance from node `0` to all other nodes. If a node is unreachable from node `0`, its distance should be `-1`.
 
 ### Example Testcases
 

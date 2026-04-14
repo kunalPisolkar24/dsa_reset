@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-Find the cheapest price from node `0` to node `n-1` with at most `k` intermediate stops (at most `k+1` edges).
+Find the cheapest price from node `0` to node `n-1` with at most `k` intermediate stops (at most `k+1` edges). If node `n-1` is unreachable within `k` stops, return -1.
 
 ### Example Testcases
 

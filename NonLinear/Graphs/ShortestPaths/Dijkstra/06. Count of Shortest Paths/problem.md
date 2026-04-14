@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-Calculate the number of different paths from node `0` to node `n-1` that all have the same minimum total weight. Return the count modulo 10^9+7.
+Calculate the number of different paths from node `0` to node `n-1` that all have the same minimum total weight. Return the count modulo 10^9+7. If node `n-1` is unreachable from node `0`, return 0.
 
 ### Example Testcases
 
