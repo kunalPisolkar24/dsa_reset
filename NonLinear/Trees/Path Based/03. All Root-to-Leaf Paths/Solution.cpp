@@ -11,33 +11,21 @@ class Solution {
 public:
   vector<string> binaryTreePaths(TreeNode *root) {
     vector<string> ans;
-    vector<int> temp;
-    function<void(TreeNode *)> sol = [&](TreeNode *node) -> void {
+    function<void(TreeNode *, string)> sol = [&](TreeNode *node,
+                                                 string temp) -> void {
       if (!node)
         return;
 
-      temp.push_back(node->val);
-
       if (!node->left and !node->right) {
-        string tmp = "";
-        for (int i = 0; i < temp.size(); i++) {
-          tmp += to_string(temp[i]);
-          if (i != temp.size() - 1) {
-            tmp += "->";
-          }
-        }
-        ans.push_back(tmp);
-        temp.pop_back();
+        ans.push_back(temp + to_string(node->val));
         return;
       }
 
-      sol(node->left);
-
-      sol(node->right);
-      temp.pop_back();
+      sol(node->left, temp + to_string(node->val) + "->");
+      sol(node->right, temp + to_string(node->val) + "->");
     };
 
-    sol(root);
+    sol(root, "");
     return ans;
   }
 };
