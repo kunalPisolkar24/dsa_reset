@@ -1,0 +1,57 @@
+# 7. Path Sum III
+
+**Difficulty:** Medium
+
+## Problem Statement
+
+Given the `root` of a binary tree and an integer `targetSum`, return the number of paths where the sum of the values along the path equals `targetSum`.\n\nThe path does not need to start or end at the root or a leaf, but it must go downwards (i.e., traveling only from parent nodes to child nodes).
+
+## Example Testcases
+
+**Example 1:**
+```text
+      10
+     /  \
+    5   -3
+   / \    \
+  3   2   11
+ / \   \
+3  -2   1
+```
+```
+Input: root = [10,5,-3,3,2,null,11,3,-2,null,1], targetSum = 8
+Output: 3
+Explanation: Paths are: 5->3, 5->2->1, 10->-3->11.
+```
+
+**Example 2:**
+```text
+      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \    / \
+7    2  5   1
+```
+```
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+Output: 3
+```
+
+**Example 3:**
+```text
+      1
+     / \
+    2   3
+```
+```
+Input: root = [1,2,3], targetSum = 3
+Output: 2
+Explanation: Paths are [1,2] and [3].
+```
+
+## Constraints
+
+- The number of nodes in the tree is in the range `[0, 1000]`.
+- `-10^6 <= Node.val <= 10^6` (Note: Values can be large)
