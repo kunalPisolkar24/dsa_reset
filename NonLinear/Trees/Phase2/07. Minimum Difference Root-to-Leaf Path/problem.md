@@ -1,4 +1,4 @@
-# 8. Minimum Difference Root-to-Leaf Path
+# 7. Minimum Difference Root-to-Leaf Path
 
 **Difficulty:** Medium
 

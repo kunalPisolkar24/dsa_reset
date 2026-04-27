@@ -1,4 +1,4 @@
-# 6. Maximum Path Length with Even Values Only
+# 5. Maximum Path Length with Even Values Only
 
 **Difficulty:** Medium
 

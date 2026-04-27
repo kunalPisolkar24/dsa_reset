@@ -1,4 +1,4 @@
-# 12. Path Exists (Root-to-Leaf Sum)
+# 1. Path Exists (Root-to-Leaf Sum)
 
 **Difficulty:** Easy
 

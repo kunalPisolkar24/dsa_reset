@@ -1,4 +1,4 @@
-# 15. Check for Node with Child Sum Property
+# 14. Check for Node with Child Sum Property
 
 **Difficulty:** Easy
 

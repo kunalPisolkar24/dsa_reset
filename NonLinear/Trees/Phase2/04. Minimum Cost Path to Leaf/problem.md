@@ -1,4 +1,4 @@
-# 5. Minimum Cost Path to Leaf
+# 4. Minimum Cost Path to Leaf
 
 **Difficulty:** Easy
 

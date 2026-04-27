@@ -1,4 +1,4 @@
-# 13. Count Nodes Greater Than or Equal to X
+# 12. Count Nodes Greater Than or Equal to X
 
 **Difficulty:** Easy
 

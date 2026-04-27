@@ -1,4 +1,4 @@
-# 14. Balanced Binary Tree Height
+# 13. Balanced Binary Tree Height
 
 **Difficulty:** Easy
 

@@ -1,4 +1,4 @@
-# 7. Minimum Depth to a Node with Value >= X
+# 6. Minimum Depth to a Node with Value >= X
 
 **Difficulty:** Medium
 

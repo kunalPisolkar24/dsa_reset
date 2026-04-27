@@ -1,4 +1,4 @@
-# 4. Maximum Path Sum (Any Node to Any Node)
+# 3. Maximum Path Sum (Any Node to Any Node)
 
 **Difficulty:** Medium
 

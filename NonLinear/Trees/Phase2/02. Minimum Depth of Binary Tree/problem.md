@@ -1,4 +1,4 @@
-# 3. Minimum Depth of Binary Tree
+# 2. Minimum Depth of Binary Tree
 
 **Difficulty:** Medium
 
