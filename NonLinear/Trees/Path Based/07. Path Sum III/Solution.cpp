@@ -10,28 +10,22 @@ struct TreeNode {
 class Solution {
 public:
   int pathSum(TreeNode *root, int targetSum) {
-    int count = 0;
-
-    function<void(TreeNode *, int)> sol = [&](TreeNode *node, int sum) -> void {
+    unordered_map<long long, int> ump;
+    ump[0] = 1;
+    function<int(TreeNode *, int)> sol = [&](TreeNode *node, int sum) -> int {
       if (!node)
-        return;
-
-      if (sum - node->val == 0) {
-        count++;
+        return 0;
+      int count = 0;
+      sum += node->val;
+      if (ump.count(sum - targetSum)) {
+        count += ump[sum - targetSum];
       }
-      sol(node->left, sum - node->val);
-      sol(node->right, sum - node->val);
+      ump[sum]++;
+      count += sol(node->left, sum);
+      count += sol(node->right, sum);
+      ump[sum]--;
+      return count;
     };
-
-    function<void(TreeNode *)> sol1 = [&](TreeNode *node) -> void {
-      if (!node)
-        return;
-      sol(node, targetSum);
-      sol1(node->left);
-      sol1(node->right);
-    };
-
-    sol1(root);
-    return count;
+    return sol(root, 0);
   }
 };
