@@ -6,12 +6,14 @@ struct Color {
     static const string RED;
     static const string GREEN;
     static const string YELLOW;
+    static const string CYAN;
     static const string RESET;
     static const string BOLD;
 };
 const string Color::RED = "\033[31m";
 const string Color::GREEN = "\033[32m";
 const string Color::YELLOW = "\033[33m";
+const string Color::CYAN = "\033[36m";
 const string Color::RESET = "\033[0m";
 const string Color::BOLD = "\033[1m";
 
@@ -46,6 +48,28 @@ struct TestCase {
 };
 class TestRunner {
 public:
+    template<typename T>
+    void print(const T& val) {
+        if constexpr (is_same_v<T, vector<int>>) {
+            cout << "[";
+            for(int i=0; i<val.size(); i++) {
+                if(val[i] == -100000) cout << "null";
+                else cout << val[i];
+                cout << (i == val.size()-1 ? "" : ", ");
+            }
+            cout << "]";
+        } else if constexpr (is_same_v<T, vector<vector<int>>>) {
+            cout << "[";
+            for(int i=0; i<val.size(); i++) {
+                print(val[i]);
+                cout << (i == val.size()-1 ? "" : ", ");
+            }
+            cout << "]";
+        } else {
+            cout << val;
+        }
+    }
+
     void run() {
         vector<TestCase> cases = {
             { {5,4,8,11,-100000,13,4,7,2,-100000,-100000,5,1}, 22, { {5,4,11,2}, {5,8,4,5} } },
@@ -70,13 +94,19 @@ public:
         for(int i=0; i<cases.size(); i++) {
             TreeNode* root = buildTree(cases[i].nodes);
             vector<vector<int>> res = sol.pathSum(root, cases[i].target);
+            
+            vector<vector<int>> expected = cases[i].expected;
             sort(res.begin(), res.end());
-            sort(cases[i].expected.begin(), cases[i].expected.end());
-            if(res == cases[i].expected) {
+            sort(expected.begin(), expected.end());
+
+            if(res == expected) {
                 cout << Color::GREEN << "✓ Test " << i+1 << " Passed" << Color::RESET << "\n";
                 passed++;
             } else {
                 cout << Color::RED << "✗ Test " << i+1 << " Failed" << Color::RESET << "\n";
+                cout << Color::CYAN << "    [LOG] Input:    nodes: " << Color::RESET; print(cases[i].nodes); cout << Color::CYAN << ", target: " << Color::RESET << cases[i].target << "\n";
+                cout << Color::CYAN << "    [LOG] Expected: " << Color::RESET; print(cases[i].expected); cout << "\n";
+                cout << Color::CYAN << "    [LOG] Got:      " << Color::RESET; print(res); cout << "\n\n";
             }
         }
         cout << "\n";

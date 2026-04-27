@@ -6,12 +6,14 @@ struct Color {
     static const string RED;
     static const string GREEN;
     static const string YELLOW;
+    static const string CYAN;
     static const string RESET;
     static const string BOLD;
 };
 const string Color::RED = "\033[31m";
 const string Color::GREEN = "\033[32m";
 const string Color::YELLOW = "\033[33m";
+const string Color::CYAN = "\033[36m";
 const string Color::RESET = "\033[0m";
 const string Color::BOLD = "\033[1m";
 
@@ -45,6 +47,21 @@ struct TestCase {
 };
 class TestRunner {
 public:
+    template<typename T>
+    void print(const T& val) {
+        if constexpr (is_same_v<T, vector<int>>) {
+            cout << "[";
+            for(int i=0; i<val.size(); i++) {
+                if(val[i] == -100000) cout << "null";
+                else cout << val[i];
+                cout << (i == val.size()-1 ? "" : ", ");
+            }
+            cout << "]";
+        } else {
+            cout << val;
+        }
+    }
+
     void run() {
         vector<TestCase> cases = {
             { {1,2,3}, 4 },
@@ -75,7 +92,10 @@ public:
                 cout << Color::GREEN << "✓ Test " << i+1 << " Passed" << Color::RESET << "\n";
                 passed++;
             } else {
-                cout << Color::RED << "✗ Test " << i+1 << " Failed (Got Sum " << sum << ", Expected Sum " << cases[i].expectedSum << ")" << Color::RESET << "\n";
+                cout << Color::RED << "✗ Test " << i+1 << " Failed" << Color::RESET << "\n";
+                cout << Color::CYAN << "    [LOG] Input:    " << Color::RESET; print(cases[i].nodes); cout << "\n";
+                cout << Color::CYAN << "    [LOG] Expected: " << Color::RESET << "Sum " << cases[i].expectedSum << "\n";
+                cout << Color::CYAN << "    [LOG] Got:      " << Color::RESET << "Sum " << sum << " (Path: "; print(res); cout << ")\n\n";
             }
         }
         cout << "\n";
