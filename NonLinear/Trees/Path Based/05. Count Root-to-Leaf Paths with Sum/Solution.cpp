@@ -10,23 +10,18 @@ struct TreeNode {
 class Solution {
 public:
   int countPathSum(TreeNode *root, int targetSum) {
-    int count = 0;
-    function<void(TreeNode *, int)> sol = [&](TreeNode *node, int sum) -> void {
+    function<int(TreeNode *, int)> sol = [&](TreeNode *node, int sum) -> int {
       if (!node)
-        return;
+        return 0;
 
       if (!node->left and !node->right) {
-        if (sum - node->val == 0) {
-          count++;
-          return;
-        }
-      } else {
-        sol(node->left, sum - node->val);
-        sol(node->right, sum - node->val);
+        return (sum - node->val == 0) ? 1 : 0;
       }
+
+      return sol(node->left, sum - node->val) +
+             sol(node->right, sum - node->val);
     };
-    
-    sol(root, targetSum);
-    return count;
+
+    return sol(root, targetSum);
   }
 };
