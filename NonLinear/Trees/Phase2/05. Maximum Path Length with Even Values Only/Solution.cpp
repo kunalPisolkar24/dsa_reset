@@ -15,30 +15,18 @@ struct TreeNode {
 class Solution {
 public:
   int maxEvenPathLength(TreeNode *root) {
-    int mx = INT_MIN;
 
-    if(!root or root->val % 2 != 0) return 0;
-    
-    function<void(TreeNode *, int)> sol = [&](TreeNode *node, int lev) -> void {
-      if (!node)
-        return;
+    function<int(TreeNode *)> sol = [&](TreeNode *node) -> int {
+      if (!node or node->val % 2 != 0)
+        return 0;
 
-      lev += 1;
+      int left = sol(node->left);
+      int right = sol(node->right);
 
-      if (!node->left and !node->right and node->val % 2 == 0) {
-        mx = max(mx, lev);
-        return;
-      }
-
-      if (node->left and node->left->val % 2 == 0) {
-        sol(node->left, lev);
-      }
-
-      if (node->right and node->right->val % 2 == 0) {
-        sol(node->right, lev);
-      }
+      if (left == 0 and right == 0)
+        return 1;
+      return 1 + max(left, right);
     };
-    sol(root, 0);
-    return mx;
+    return sol(root);
   }
 };
