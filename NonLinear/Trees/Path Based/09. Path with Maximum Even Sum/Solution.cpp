@@ -10,22 +10,22 @@ struct TreeNode {
 class Solution {
 public:
   int maxEvenPathSum(TreeNode *root) {
-    int mx = INT_MIN;
-    function<void(TreeNode *, int)> sol = [&](TreeNode *node, int sum) -> void {
+    function<int(TreeNode *, int)> sol = [&](TreeNode *node, int sum) -> int {
       if (!node)
-        return;
+        return INT_MIN;
+
       sum += node->val;
+
       if (!node->left and !node->right) {
-        if ((sum & 1) == 0 and sum > mx) {
-          mx = sum;
-        }
-        return;
-      } else {
-        sol(node->left, sum);
-        sol(node->right, sum);
+        return (sum % 2 == 0) ? sum : INT_MIN;
       }
+      
+      int left = sol(node->left, sum);
+      int right = sol(node->right, sum);
+      return max(left, right);
     };
-    sol(root, 0);
-    return mx == INT_MIN ? -1 : mx;
+
+    int res = sol(root, 0);
+    return res == INT_MIN ? -1 : res;
   }
 };
