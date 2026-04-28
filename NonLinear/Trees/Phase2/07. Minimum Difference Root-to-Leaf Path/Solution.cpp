@@ -15,23 +15,22 @@ struct TreeNode {
 class Solution {
 public:
   int minDiffPath(TreeNode *root) {
-    int global_min = INT_MAX;
-    function<void(TreeNode *, int, int)> sol = [&](TreeNode *node, int mx,
-                                                   int mn) -> void {
+
+    function<int(TreeNode *, int, int)> sol = [&](TreeNode *node, int mx,
+                                                  int mn) -> int {
       if (!node)
-        return;
+        return INT_MAX;
 
       mx = max(mx, node->val);
       mn = min(mn, node->val);
 
       if (!node->left and !node->right) {
-        global_min = min(global_min, mx - mn);
-        return;
+        return mx - mn;
       }
-      sol(node->left, mx, mn);
-      sol(node->right, mx, mn);
+
+      return min(sol(node->left, mx, mn), sol(node->right, mx, mn));
     };
-    sol(root, INT_MIN, INT_MAX);
-    return global_min;
+
+    return sol(root, INT_MIN, INT_MAX);
   }
 };
