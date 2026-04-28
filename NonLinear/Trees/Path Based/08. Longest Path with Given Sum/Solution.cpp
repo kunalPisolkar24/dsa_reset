@@ -38,6 +38,5 @@ public:
 
     sol(root);
     return mx;
-    return 0;
   }
 };
