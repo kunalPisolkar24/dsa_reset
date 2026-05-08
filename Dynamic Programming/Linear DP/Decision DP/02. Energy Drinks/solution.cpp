@@ -13,14 +13,15 @@ class Solution {
 public:
   long long maxEnergy(vector<int> &energy) {
     int n = energy.size();
-    vector<ll> dp(n + 1, 0);
     if (n == 1)
       return energy[0];
-    dp[0] = energy[0];
-    dp[1] = max(energy[0], energy[1]);
+    ll p0 = energy[0];
+    ll p1 = max(energy[0], energy[1]);
     for (int i = 2; i < n; i++) {
-      dp[i] = max(dp[i - 1], dp[i - 2] + energy[i]);
+      long long curr = max(p1, p0 + energy[i]);
+      p0 = p1;
+      p1 = curr;
     }
-    return dp[n - 1];
+    return p1;
   }
 };
