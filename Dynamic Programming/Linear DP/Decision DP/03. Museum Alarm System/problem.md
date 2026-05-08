@@ -9,13 +9,6 @@ Security Rule:
 
 Find the maximum total loot possible without triggering the alarm.
 
-### Transition Mastery Twist
-To fully master this problem, you should implement the solution in the following four ways:
-1. **Recursive** (Brute Force)
-2. **Memoized** (Top-Down DP)
-3. **Tabulated** (Bottom-Up DP)
-4. **Space Optimized** (O(1) space, excluding input)
-
 ## Examples
 
 ### Example 1
