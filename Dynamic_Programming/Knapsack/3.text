@@ -1,0 +1,77 @@
+Problem: Minimum Cost to Reach Target Score
+
+You are playing a game. There are N power-ups.
+The i-th power-up gives score gain[i] and costs cost[i] to use.
+You may use each power-up at most once.
+
+Find the minimum total cost needed to achieve a score of at least S.
+If it is impossible, return -1.
+
+Example 1:
+Input:
+N = 4
+S = 10
+gain = [2, 4, 6, 8]
+cost = [3, 5, 6, 9]
+
+Output:
+11
+
+Explanation:
+Choose power-ups with gain 4 and 6.
+Total score = 10
+Total cost = 5 + 6 = 11
+
+Example 2:
+Input:
+N = 3
+S = 7
+gain = [1, 3, 5]
+cost = [2, 4, 10]
+
+Output:
+14
+
+Explanation:
+To achieve at least score 7:
+- gain 5 alone is not enough
+- gain 1 + 3 = 4 is not enough
+- gain 1 + 5 = 6 is not enough
+- gain 3 + 5 = 8 with cost 4 + 10 = 14
+- gain 1 + 3 + 5 = 9 with cost 2 + 4 + 10 = 16
+
+The minimum valid cost is 14.
+
+Example 3:
+Input:
+N = 4
+S = 9
+gain = [2, 5, 4, 7]
+cost = [3, 6, 5, 10]
+
+Output:
+11
+
+Explanation:
+Choose gain 5 and 4.
+Total score = 9
+Total cost = 6 + 5 = 11
+
+Example 4:
+Input:
+N = 2
+S = 10
+gain = [3, 4]
+cost = [5, 6]
+
+Output:
+-1
+
+Explanation:
+It is impossible to reach score 10.
+
+Constraints:
+1 <= N <= 100
+1 <= S <= 1000
+1 <= gain[i] <= 1000
+1 <= cost[i] <= 1000
