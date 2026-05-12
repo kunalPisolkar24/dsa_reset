@@ -1,0 +1,67 @@
+Problem: 0/1 Knapsack
+
+You are given:
+
+1. An integer N representing the number of items.
+2. Two arrays:
+   - wt[i]   -> weight of the i-th item
+   - val[i]  -> value of the i-th item
+3. An integer W representing the maximum capacity of the knapsack.
+
+Each item can either be:
+- taken once
+- or not taken
+
+Your task is to find the maximum total value that can be obtained
+without exceeding the knapsack capacity W.
+
+Constraints:
+- 1 <= N <= 100
+- 1 <= W <= 1000
+- 1 <= wt[i], val[i] <= 1000
+
+Test Case 1
+
+Input:
+N = 4
+wt  = [1, 3, 4, 5]
+val = [10, 40, 50, 70]
+W = 8
+
+Output:
+110
+
+Explanation:
+Take items with weights 3 and 5.
+Total value = 40 + 70 = 110
+
+
+Test Case 2
+
+Input:
+N = 3
+wt  = [1, 2, 3]
+val = [6, 10, 12]
+W = 5
+
+Output:
+22
+
+Explanation:
+Take items with weights 2 and 3.
+Total value = 10 + 12 = 22
+
+Test Case 3
+
+Input:
+N = 5
+wt  = [2, 3, 4, 5, 9]
+val = [3, 4, 5, 8, 10]
+W = 10
+
+Output:
+15
+
+Explanation:
+Take items with weights 2, 3, and 5.
+Total value = 3 + 4 + 8 = 15
