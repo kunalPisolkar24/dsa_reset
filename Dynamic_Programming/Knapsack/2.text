@@ -15,7 +15,7 @@ Each element can either be:
 
 Return:
 - true  -> if such subset exists
-- false -> otherwise
+- false -> otherwise2
 
 Constraints:
 - 1 <= N <= 100
