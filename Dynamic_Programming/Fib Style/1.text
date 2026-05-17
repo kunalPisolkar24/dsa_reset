@@ -1,0 +1,76 @@
+Problem: Fibonacci Number
+
+The Fibonacci sequence is defined as:
+
+F(0) = 0
+F(1) = 1
+
+For N >= 2:
+
+F(N) = F(N - 1) + F(N - 2)
+
+Given an integer N, compute the Nth Fibonacci number.
+
+--------------------------------------------------
+
+Input:
+A single integer N
+
+Output:
+Print the Nth Fibonacci number.
+
+--------------------------------------------------
+
+Constraints:
+
+0 <= N <= 45
+
+--------------------------------------------------
+
+Example 1
+
+Input:
+2
+
+Output:
+1
+
+--------------------------------------------------
+
+Example 2
+
+Input:
+3
+
+Output:
+2
+
+--------------------------------------------------
+
+Example 3
+
+Input:
+5
+
+Output:
+5
+
+--------------------------------------------------
+
+Example 4
+
+Input:
+10
+
+Output:
+55
+
+--------------------------------------------------
+
+Example 5
+
+Input:
+0
+
+Output:
+0
