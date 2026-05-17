@@ -1,0 +1,85 @@
+Problem: Climbing Stairs
+
+You are climbing a staircase with N steps.
+
+Each time, you can climb either:
+- 1 step
+- 2 steps
+
+Count the number of distinct ways to reach the top.
+
+--------------------------------------------------
+
+Input:
+A single integer N
+
+Output:
+Print the number of distinct ways to reach step N.
+
+--------------------------------------------------
+
+Constraints:
+
+1 <= N <= 45
+
+--------------------------------------------------
+
+Example 1
+
+Input:
+1
+
+Output:
+1
+
+Explanation:
+1
+
+--------------------------------------------------
+
+Example 2
+
+Input:
+2
+
+Output:
+2
+
+Explanation:
+1 + 1
+2
+
+--------------------------------------------------
+
+Example 3
+
+Input:
+3
+
+Output:
+3
+
+Explanation:
+1 + 1 + 1
+1 + 2
+2 + 1
+
+--------------------------------------------------
+
+Example 4
+
+Input:
+5
+
+Output:
+8
+
+--------------------------------------------------
+
+Example 5
+
+Input:
+10
+
+Output:
+89
