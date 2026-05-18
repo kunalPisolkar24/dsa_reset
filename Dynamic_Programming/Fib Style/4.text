@@ -1,0 +1,77 @@
+Problem: Min Cost Climbing Stairs
+
+You are given an integer array cost where:
+
+cost[i] is the cost of stepping on stair i.
+
+Once you pay the cost,
+you can climb either:
+- 1 step
+- 2 steps
+
+You may start from step 0 or step 1.
+
+Return the minimum cost to reach the top.
+
+--------------------------------------------------
+
+Input:
+An integer N
+An array cost of size N
+
+Output:
+Print the minimum cost to reach the top.
+
+--------------------------------------------------
+
+Constraints:
+
+2 <= N <= 1000
+0 <= cost[i] <= 999
+
+--------------------------------------------------
+
+Example 1
+
+Input:
+3
+10 15 20
+
+Output:
+15
+
+Explanation:
+Start at step 1 -> pay 15 -> jump to top.
+
+--------------------------------------------------
+
+Example 2
+
+Input:
+10
+1 100 1 1 1 100 1 1 100 1
+
+Output:
+6
+
+--------------------------------------------------
+
+Example 3
+
+Input:
+2
+5 10
+
+Output:
+5
+
+--------------------------------------------------
+
+Example 4
+
+Input:
+5
+1 2 3 4 5
+
+Output:
+6
