@@ -1,0 +1,125 @@
+Problem: Frog Jump With K Distance
+
+A frog is standing on stone 0 and wants to reach stone N - 1.
+
+You are given:
+- an integer K
+- an array heights where heights[i] represents the height of the i-th stone.
+
+From stone i, the frog can jump to any stone:
+i + 1, i + 2, ..., i + K
+
+If the frog jumps from stone i to stone j,
+the energy cost is:
+
+abs(heights[i] - heights[j])
+
+Return the minimum total energy required to reach the last stone.
+
+--------------------------------------------------
+
+Input:
+An integer N
+An integer K
+An array heights of size N
+
+Output:
+Print the minimum total energy required.
+
+--------------------------------------------------
+
+Constraints:
+
+2 <= N <= 1e5
+1 <= K <= 100
+1 <= heights[i] <= 1e4
+
+--------------------------------------------------
+
+Example 1
+
+Input:
+5
+3
+10 30 40 50 20
+
+Output:
+30
+
+Explanation:
+0 -> 1 -> 4
+
+Cost:
+|10 - 30| + |30 - 20|
+= 20 + 10
+= 30
+
+--------------------------------------------------
+
+Example 2
+
+Input:
+3
+1
+10 20 10
+
+Output:
+20
+
+Explanation:
+0 -> 1 -> 2
+
+Cost:
+|10 - 20| + |20 - 10|
+= 10 + 10
+= 20
+
+--------------------------------------------------
+
+Example 3
+
+Input:
+5
+2
+10 20 10 30 20
+
+Output:
+20
+
+Explanation:
+0 -> 2 -> 4
+
+Cost:
+|10 - 10| + |10 - 20|
+= 0 + 10
+= 10
+
+Better path:
+0 -> 1 -> 2 -> 4
+
+Cost:
+|10 - 20| + |20 - 10| + |10 - 20|
+= 10 + 10 + 10
+= 30
+
+Minimum = 10
+
+--------------------------------------------------
+
+Example 4
+
+Input:
+6
+4
+30 10 60 10 60 50
+
+Output:
+40
+
+Explanation:
+0 -> 2 -> 5
+
+Cost:
+|30 - 60| + |60 - 50|
+= 30 + 10
+= 40
