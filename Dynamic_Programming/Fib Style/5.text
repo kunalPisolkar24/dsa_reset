@@ -1,0 +1,91 @@
+Problem: Frog Jump
+
+A frog is standing on stone 0 and wants to reach stone N - 1.
+
+You are given an array heights where:
+heights[i] represents the height of the i-th stone.
+
+The frog can jump:
+- from i to i + 1
+- from i to i + 2
+
+If the frog jumps from stone i to stone j,
+the energy cost is:
+
+abs(heights[i] - heights[j])
+
+Return the minimum total energy required to reach the last stone.
+
+--------------------------------------------------
+
+Input:
+An integer N
+An array heights of size N
+
+Output:
+Print the minimum total energy required.
+
+--------------------------------------------------
+
+Constraints:
+
+2 <= N <= 1e5
+1 <= heights[i] <= 1e4
+
+--------------------------------------------------
+
+Example 1
+
+Input:
+4
+10 20 30 10
+
+Output:
+20
+
+Explanation:
+0 -> 1 -> 3
+
+Cost:
+|10 - 20| + |20 - 10|
+= 10 + 10
+= 20
+
+--------------------------------------------------
+
+Example 2
+
+Input:
+3
+10 50 10
+
+Output:
+0
+
+Explanation:
+0 -> 2
+
+Cost:
+|10 - 10| = 0
+
+--------------------------------------------------
+
+Example 3
+
+Input:
+5
+7 4 4 2 6
+
+Output:
+5
+
+--------------------------------------------------
+
+Example 4
+
+Input:
+6
+30 10 60 10 60 50
+
+Output:
+40
