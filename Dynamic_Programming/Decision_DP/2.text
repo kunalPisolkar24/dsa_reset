@@ -1,0 +1,74 @@
+Problem — Maximum Sum Path
+
+You are given an integer array arr of size N.
+
+You start at index 0.
+
+From index i, you may:
+- move to i + 1
+- move to i + 2
+
+Whenever you land on an index, you collect arr[i].
+
+Find the maximum total sum you can collect while reaching index N - 1.
+
+
+Constraints
+
+1 <= N <= 10^5
+0 <= arr[i] <= 10^4
+
+
+Input Format
+
+- First line contains integer N
+- Second line contains N integers representing arr
+
+
+Output Format
+
+Print the maximum total sum possible to reach index N - 1.
+
+
+Test Case 1
+
+Input
+4
+1 2 3 4
+
+Output
+10
+
+Explanation
+0 -> 1 -> 2 -> 3
+1 + 2 + 3 + 4 = 10
+
+
+Test Case 2
+
+Input
+5
+5 100 5 100 5
+
+Output
+210
+
+Explanation
+0 -> 1 -> 2 -> 3 -> 4
+5 + 100 + 5 + 100 + 5 = 215
+
+0 -> 1 -> 3 -> 4
+5 + 100 + 100 + 5 = 210
+
+Maximum = 215
+
+
+Test Case 3
+
+Input
+6
+10 1 1 10 1 10
+
+Output
+33
+
