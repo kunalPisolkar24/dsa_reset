@@ -1,0 +1,83 @@
+Problem — Minimum Cost Climb
+
+You are given an integer array cost of size N.
+
+You start at index 0.
+
+From index i, you may:
+- move to i + 1
+- move to i + 2
+
+Whenever you land on an index, you must pay cost[i].
+
+Find the minimum total cost required to reach index N - 1.
+
+
+Constraints
+
+1 <= N <= 10^5
+0 <= cost[i] <= 10^4
+
+
+Input Format
+
+- First line contains integer N
+- Second line contains N integers representing cost
+
+
+Output Format
+
+Print the minimum total cost to reach index N - 1.
+
+
+Test Case 1
+
+Input
+4
+1 2 3 4
+
+Output
+7
+
+Explanation
+0 -> 1 -> 3
+1 + 2 + 4 = 7
+
+
+Test Case 2
+
+Input
+5
+10 1 10 1 10
+
+Output
+22
+
+Explanation
+0 -> 1 -> 3 -> 4
+10 + 1 + 1 + 10 = 22
+
+
+Test Case 3
+
+Input
+6
+5 1 2 10 6 2
+
+Output
+10
+
+Explanation
+0 -> 1 -> 2 -> 4 -> 5
+5 + 1 + 2 + 6 + 2 = 16
+
+0 -> 2 -> 4 -> 5
+5 + 2 + 6 + 2 = 15
+
+0 -> 1 -> 3 -> 5
+5 + 1 + 10 + 2 = 18
+
+0 -> 1 -> 2 -> 3 -> 5
+5 + 1 + 2 + 10 + 2 = 20
+
+Minimum = 15
