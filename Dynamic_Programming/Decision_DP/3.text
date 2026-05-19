@@ -1,0 +1,82 @@
+Problem — Minimum Cost Climb with K Jumps
+
+You are given an integer array cost of size N and an integer K.
+
+You start at index 0.
+
+From index i, you may jump to any index:
+i + 1, i + 2, ..., i + K
+
+Whenever you land on an index, you must pay cost[i].
+
+Find the minimum total cost required to reach index N - 1.
+
+
+Constraints
+
+1 <= N <= 10^5
+1 <= K <= 100
+0 <= cost[i] <= 10^4
+
+
+Input Format
+
+- First line contains integers N and K
+- Second line contains N integers representing cost
+
+
+Output Format
+
+Print the minimum total cost required to reach index N - 1.
+
+
+Test Case 1
+
+Input
+5 2
+1 2 3 4 5
+
+Output
+9
+
+Explanation
+0 -> 2 -> 4
+1 + 3 + 5 = 9
+
+
+Test Case 2
+
+Input
+6 3
+10 1 10 1 10 1
+
+Output
+12
+
+Explanation
+0 -> 1 -> 3 -> 5
+10 + 1 + 1 + 1 = 13
+
+0 -> 3 -> 5
+10 + 1 + 1 = 12
+
+Minimum = 12
+
+
+Test Case 3
+
+Input
+7 4
+5 100 5 100 5 100 5
+
+Output
+15
+
+Explanation
+0 -> 2 -> 4 -> 6
+5 + 5 + 5 + 5 = 20
+
+0 -> 4 -> 6
+5 + 5 + 5 = 15
+
+Minimum = 15
