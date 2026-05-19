@@ -1,0 +1,22 @@
+Remove All Adjacent Duplicates In String
+
+You are given a string s consisting of lowercase English letters. 
+A duplicate removal consists of choosing two adjacent and equal letters and removing them.
+
+Repeatedly perform duplicate removals on s until you can no longer do so.
+
+Return the final string after all such duplicate removals.
+
+Example 1:
+Input: s = "abbaca"
+Output: "ca"
+Explanation: "abbaca" -> "abaca" (remove "bb") -> "aca" (remove "aa") -> "ca"
+
+Example 2:
+Input: s = "azxxzy"
+Output: "ay"
+Explanation: "azxxzy" -> "azzy" (remove "xx") -> "ay" (remove "zz")
+
+Constraints:
+1 <= s.length <= 10^5
+s consists of lowercase English letters only.
