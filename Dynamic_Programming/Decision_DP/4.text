@@ -1,0 +1,66 @@
+Problem — Maximum Sum with No Adjacent Elements
+
+You are given an integer array arr of size N.
+
+You may choose some elements from the array such that no two chosen elements are adjacent.
+
+Find the maximum possible sum.
+
+
+Constraints
+
+1 <= N <= 10^5
+0 <= arr[i] <= 10^4
+
+
+Input Format
+
+- First line contains integer N
+- Second line contains N integers representing arr
+
+
+Output Format
+
+Print the maximum possible sum.
+
+
+Test Case 1
+
+Input
+5
+2 1 4 9 3
+
+Output
+11
+
+Explanation
+Choose:
+2 + 9 = 11
+
+
+Test Case 2
+
+Input
+6
+5 5 10 100 10 5
+
+Output
+110
+
+Explanation
+Choose:
+5 + 100 + 5 = 110
+
+
+Test Case 3
+
+Input
+4
+1 2 3 1
+
+Output
+4
+
+Explanation
+Choose:
+1 + 3 = 4
