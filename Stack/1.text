@@ -1,0 +1,21 @@
+Reverse String Using a Stack
+
+Given a string s, reverse the string using a stack.
+
+Return the reversed string.
+
+Example 1:
+Input: s = "hello"
+Output: "olleh"
+
+Example 2:
+Input: s = "abcde"
+Output: "edcba"
+
+Example 3:
+Input: s = "a"
+Output: "a"
+
+Constraints:
+1 <= s.length <= 10^5
+s consists of printable ASCII characters (32 to 126).
