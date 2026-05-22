@@ -1,0 +1,25 @@
+Maximum Sum with K-Distance Constraint
+
+Given an array arr of size N and an integer K, select a subset of indices
+such that any two selected indices differ by more than K.
+Maximize the sum of selected elements. You may select nothing (sum = 0).
+
+Example 1:
+Input: N = 5, K = 1, arr = [10, 5, 20, 15, 30]
+Output: 60
+Explanation: K=1 means no adjacent picks. Pick indices 0, 2, 4 -> 10+20+30
+
+Example 2:
+Input: N = 5, K = 2, arr = [10, 5, 20, 15, 30]
+Output: 40
+Explanation: K=2 means at least 2 elements between picks. Best is indices 0 and 4 -> 10+30
+
+Example 3:
+Input: N = 6, K = 2, arr = [-5, 10, -3, 8, -1, 20]
+Output: 30
+Explanation: Pick indices 1 and 5 -> 10+20 (distance 4 > 2). Picking 1 and 3 is invalid (distance 2).
+
+Constraints:
+1 <= N <= 10^5
+1 <= K <= N
+-10^4 <= arr[i] <= 10^4
