@@ -1,0 +1,41 @@
+Simplify Path
+
+Given a string path, which is an absolute path (starting with a slash '/') to a file or directory in a Unix-style file system, convert it to the simplified canonical path.
+
+In a Unix-style file system:
+- A period '.' refers to the current directory
+- A double period '..' refers to the directory up a level
+- Multiple consecutive slashes (e.g., '//') are treated as a single slash '/'
+- Any other sequence of periods (e.g., '...') is treated as a valid directory/file name
+
+The canonical path should have the following format:
+- The path starts with a single slash '/'
+- Any two directories are separated by a single slash '/'
+- The path does not end with a trailing '/'
+- The path only contains the directories on the path from the root to the target file or directory (no '.' or '..')
+
+Return the simplified canonical path.
+
+Example 1:
+Input: path = "/home/"
+Output: "/home"
+Explanation: trailing slash removed
+
+Example 2:
+Input: path = "/../"
+Output: "/"
+Explanation: going up from root stays at root
+
+Example 3:
+Input: path = "/home//foo/"
+Output: "/home/foo"
+Explanation: multiple slashes become one
+
+Example 4:
+Input: path = "/a/./b/../../c/"
+Output: "/c"
+
+Constraints:
+1 <= path.length <= 3000
+path consists of English letters, digits, period '.', slash '/' or '_'
+path is a valid absolute Unix path
