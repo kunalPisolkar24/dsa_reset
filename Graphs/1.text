@@ -1,0 +1,29 @@
+Problem: Find if Path Exists in Graph
+
+There is an undirected graph with n vertices numbered from 0 to n-1. The edges are given as a 2D array edges where edges[i] = [ui, vi] means there is a bidirectional edge between ui and vi. No self loops and no duplicate edges exist.
+
+Given integers n, edges, source, and destination, return true if there is a valid path from source to destination, otherwise return false.
+
+Example 1:
+Input: n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2
+Output: true
+Explanation: There is a path 0 -> 1 -> 2 and also a direct edge 2 -> 0.
+
+Example 2:
+Input: n = 6, edges = [[0,1],[0,2],[3,5],[5,4],[4,3]], source = 0, destination = 5
+Output: false
+Explanation: Vertices 0, 1, 2 are in one component. Vertices 3, 4, 5 are in another. No connection between them.
+
+Example 3:
+Input: n = 5, edges = [[0,1],[1,2],[2,3],[3,4]], source = 0, destination = 4
+Output: true
+Explanation: The path 0 -> 1 -> 2 -> 3 -> 4 exists.
+
+Constraints:
+- 1 <= n <= 200000
+- 0 <= edges.length <= 200000
+- edges[i].length == 2
+- 0 <= ui, vi < n
+- ui!= vi
+- 0 <= source, destination < n
+- No duplicate edges
