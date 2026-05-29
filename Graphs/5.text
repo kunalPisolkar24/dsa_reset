@@ -1,0 +1,40 @@
+Problem: Max Area of Island
+
+Given a non-empty 2D array grid of 0's and 1's, an island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical). You may assume all four edges of the grid are surrounded by water.
+
+Find the maximum area of an island in the given 2D array. If there is no island, the maximum area is 0.
+
+Example 1:
+Input: grid = [
+  [0,0,1,0,0,0,0,1,0,0,0],
+  [0,0,0,1,1,1,0,0,0],
+  [0,1,1,0,1,0,0,0,0,0,0,0,0],
+  [0,1,0,0,1,1,0,0,1,0,0],
+  [0,1,0,0,1,1,0,0,1,1,1,0,0],
+  [0,0,0,0,0,0,0,0,1,0,0],
+  [0,0,0,1,1,1,0,0,0],
+  [0,0,0,1,1,0,0,0,0]
+]
+Output: 6
+Explanation: Several islands exist, the largest has 6 cells connected 4-directionally.
+
+Example 2:
+Input: grid = [[0,0,0,0]]
+Output: 0
+Explanation: No land cells, answer is 0.
+
+Example 3:
+Input: grid = [
+  [1,1,0,0,0],
+  [1,1,0,0,0],
+  [0,0,0,1,1],
+  [0,0,0,1,1]
+]
+Output: 4
+Explanation: Two separate islands, each with area 4. Maximum is 4.
+
+Constraints:
+- m == grid.length
+- n == grid[i].length
+- 1 <= m, n <= 50
+- grid[i][j] is 0 or 1
